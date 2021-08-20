@@ -1,0 +1,45 @@
+Tipo Usuario:
+-id_tipo
+-nome_tipo
+
+Clinica:
+-id_clinica
+-endereço
+-horario de funcionamento
+-cnpj
+-nome fantasia
+-razão social
+
+Pacientes:
+-id_prontuario
+-id_tipo
+-nome
+-rg
+-cpf
+-endereço
+-data nascimento
+-telefone
+
+Especialidade:
+-id_especialidade
+-nome_especialidade
+
+Médicos:
+-id_especialidade
+-id_medico
+-id_tipo
+-nome
+-crm
+
+Status_Consulta:
+-id_status
+-descricao
+
+Consultas:
+-id_prontuario
+-id_medico
+-id_status
+-id_clinica
+-data_consulta
+
+
