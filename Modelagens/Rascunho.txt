@@ -30,6 +30,7 @@ Médicos:
 -id_tipo
 -nome
 -crm
+-email
 
 Status_Consulta:
 -id_status
