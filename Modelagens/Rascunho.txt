@@ -5,7 +5,8 @@ Tipo Usuario:
 Clinica:
 -id_clinica
 -endereço
--horario de funcionamento
+-hora_abertura
+-hora_fechamento
 -cnpj
 -nome fantasia
 -razão social
