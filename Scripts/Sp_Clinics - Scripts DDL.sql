@@ -40,7 +40,7 @@ Nome Varchar(500) Not Null,
 Rg Char(13) Not Null,
 Cpf Char(11) Not Null Unique,
 Data_Nascimento Date Not Null,
-Telefone Varchar(12),
+Telefone Varchar(15),
 Endereco Varchar(300)
 );
 Go
@@ -51,7 +51,7 @@ Id_Especialidade Int Foreign Key References Especialidade (Id_Especialidade),
 Id_Tipo Int Foreign Key References Tipo_Usuario(Id_Tipo),
 Id_Clinica Int Foreign Key References Clinica(Id_Clinica),
 Nome Varchar(150) Not Null,
-Crm Varchar(10) Not Null Unique,
+Crm Varchar(15) Not Null Unique,
 Email Varchar(200) Not Null
 );
 Go
