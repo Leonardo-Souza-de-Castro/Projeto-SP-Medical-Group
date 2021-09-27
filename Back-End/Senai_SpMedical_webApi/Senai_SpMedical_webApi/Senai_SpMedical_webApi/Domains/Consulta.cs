@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Senai_SpMedical_webApi.Domains
 {
-    public partial class Consultum
+    public partial class Consulta
     {
         public int IdConsulta { get; set; }
         public int? IdProntuario { get; set; }
@@ -17,6 +17,6 @@ namespace Senai_SpMedical_webApi.Domains
         public virtual Clinica IdClinicaNavigation { get; set; }
         public virtual Medico IdMedicoNavigation { get; set; }
         public virtual Paciente IdProntuarioNavigation { get; set; }
-        public virtual StatusConsultum IdStatusNavigation { get; set; }
+        public virtual StatusConsulta IdStatusNavigation { get; set; }
     }
 }

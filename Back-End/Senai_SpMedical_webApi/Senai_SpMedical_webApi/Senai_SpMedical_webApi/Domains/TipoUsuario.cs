@@ -9,14 +9,12 @@ namespace Senai_SpMedical_webApi.Domains
     {
         public TipoUsuario()
         {
-            Medicos = new HashSet<Medico>();
-            Pacientes = new HashSet<Paciente>();
+            Usuarios = new HashSet<Usuario>();
         }
 
         public int IdTipo { get; set; }
         public string NomeTipo { get; set; }
 
-        public virtual ICollection<Medico> Medicos { get; set; }
-        public virtual ICollection<Paciente> Pacientes { get; set; }
+        public virtual ICollection<Usuario> Usuarios { get; set; }
     }
 }

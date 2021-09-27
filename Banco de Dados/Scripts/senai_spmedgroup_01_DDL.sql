@@ -35,7 +35,6 @@ Go
 
 Create Table Pacientes(
 Id_Prontuario Int Primary Key Identity,
-Id_Tipo Int Foreign Key References Tipo_Usuario(Id_Tipo),
 Nome Varchar(500) Not Null,
 Rg Char(13) Not Null,
 Cpf Char(11) Not Null Unique,
@@ -48,11 +47,9 @@ Go
 Create Table Medico(
 Id_Medico Int Primary Key Identity,
 Id_Especialidade Int Foreign Key References Especialidade (Id_Especialidade),
-Id_Tipo Int Foreign Key References Tipo_Usuario(Id_Tipo),
 Id_Clinica Int Foreign Key References Clinica(Id_Clinica),
 Nome Varchar(150) Not Null,
 Crm Varchar(15) Not Null Unique,
-Email Varchar(200) Not Null
 );
 Go
 
@@ -63,5 +60,13 @@ Id_Medico Int Foreign Key References Medico (Id_Medico),
 Id_Status Int Foreign Key References Status_Consulta (Id_Status),
 Id_Clinica Int Foreign Key References Clinica (Id_Clinica),
 Data_Consulta Date Not Null 
+);
+Go
+
+Create Table Usuario(
+Id_Usuario int Primary Key Identity,
+Id_Tipo Int Foreign Key References Tipo_Usuario(Id_Tipo),
+Email Varchar(250) Not Null Unique,
+Senha Varchar(15) Not Null
 );
 Go

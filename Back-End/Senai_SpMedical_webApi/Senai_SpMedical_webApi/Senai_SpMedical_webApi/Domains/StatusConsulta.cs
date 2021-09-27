@@ -5,16 +5,16 @@ using System.Collections.Generic;
 
 namespace Senai_SpMedical_webApi.Domains
 {
-    public partial class StatusConsultum
+    public partial class StatusConsulta
     {
-        public StatusConsultum()
+        public StatusConsulta()
         {
-            Consulta = new HashSet<Consultum>();
+            Consulta = new HashSet<Consulta>();
         }
 
         public int IdStatus { get; set; }
         public string Descricao { get; set; }
 
-        public virtual ICollection<Consultum> Consulta { get; set; }
+        public virtual ICollection<Consulta> Consulta { get; set; }
     }
 }
