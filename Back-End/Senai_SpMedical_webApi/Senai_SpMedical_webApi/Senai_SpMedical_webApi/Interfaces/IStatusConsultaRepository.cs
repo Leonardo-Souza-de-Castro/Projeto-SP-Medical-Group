@@ -27,9 +27,9 @@ namespace Senai_SpMedical_webApi.Interfaces
         /// <summary>
         /// Atualizar um StatusConsulta existente
         /// </summary>
-        /// <param name="StatusAtualizadoalizada">Dados Atualizados</param>
+        /// <param name="StatusAtualizado">Dados Atualizados</param>
         /// <param name="id">Id do StatusConsulta a ser atualizada</param>
-        void Atualizar(StatusConsulta StatusAtualizadoalizada, int id);
+        void Atualizar(StatusConsulta StatusAtualizado, int id);
 
         /// <summary>
         /// Deletar um StatusConsulta

@@ -16,7 +16,7 @@ namespace Senai_SpMedical_webApi.Repositories
         {
             Especialidade Especialidadebuscada = Buscar(id);
 
-            if (Especialidadebuscada.NomeEspecialidade != null)
+            if (EspeAtualizada.NomeEspecialidade != null)
             {
                 Especialidadebuscada.NomeEspecialidade = EspeAtualizada.NomeEspecialidade;
             }

@@ -17,27 +17,27 @@ namespace Senai_SpMedical_webApi.Repositories
         {
             Clinica clinicabuscada = Buscar(id);
 
-            if (clinicabuscada.Endereco != null)
+            if (ClinicaAtualizada.Endereco != null)
             {
                 clinicabuscada.Endereco = ClinicaAtualizada.Endereco;
             }
-            else if (clinicabuscada.Cnpj != null)
+            if (ClinicaAtualizada.Cnpj != null)
             {
                 clinicabuscada.Cnpj = ClinicaAtualizada.Cnpj;
             }
-            else if (clinicabuscada.NomeFantasia != null)
+            if (ClinicaAtualizada.NomeFantasia != null)
             {
                 clinicabuscada.NomeFantasia = ClinicaAtualizada.NomeFantasia;
             }
-            else if (clinicabuscada.HoraAbertura != TimeSpan.Parse("01:01"))
+            if (ClinicaAtualizada.HoraAbertura != TimeSpan.Parse("01:01"))
             {
                 clinicabuscada.HoraAbertura = ClinicaAtualizada.HoraAbertura;
             }
-            else if (clinicabuscada.HoraFechamento != TimeSpan.Parse("01:01"))
+            if (ClinicaAtualizada.HoraFechamento != TimeSpan.Parse("01:01"))
             {
                 clinicabuscada.HoraFechamento = ClinicaAtualizada.HoraFechamento;
             }
-            else if (clinicabuscada.RazaoSocial != null)
+            if (ClinicaAtualizada.RazaoSocial != null)
             {
                 clinicabuscada.RazaoSocial = ClinicaAtualizada.RazaoSocial;
             }

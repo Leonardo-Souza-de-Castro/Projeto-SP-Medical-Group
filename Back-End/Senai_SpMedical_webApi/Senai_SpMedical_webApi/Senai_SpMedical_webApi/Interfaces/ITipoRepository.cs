@@ -27,9 +27,9 @@ namespace Senai_SpMedical_webApi.Interfaces
         /// <summary>
         /// Atualizar um TipoUsuario existente
         /// </summary>
-        /// <param name="TipoAtualizadoalizada">Dados Atualizados</param>
+        /// <param name="TipoAtualizado">Dados Atualizados</param>
         /// <param name="id">Id do TipoUsuario a ser atualizada</param>
-        void Atualizar(TipoUsuario TipoAtualizadoalizada, int id);
+        void Atualizar(TipoUsuario TipoAtualizado, int id);
 
         /// <summary>
         /// Deletar um TipoUsuario

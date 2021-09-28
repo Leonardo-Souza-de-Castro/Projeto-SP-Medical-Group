@@ -21,6 +21,14 @@ namespace Senai_SpMedical_webApi.Repositories
             {
                 MedicoBuscado.Nome = medicoatualizado.Nome;
             }
+            if (medicoatualizado.IdEspecialidade != null)
+            {
+                MedicoBuscado.IdEspecialidade = medicoatualizado.IdEspecialidade;
+            }
+            if (medicoatualizado.IdClinica != null)
+            {
+                MedicoBuscado.IdClinica = medicoatualizado.IdClinica;
+            }
         }
 
         public Medico Buscar(int id)

@@ -17,14 +17,16 @@ namespace Senai_SpMedical_webApi.Interfaces
         /// <summary>
         /// Listar todas as consultas de um Paciente especifico
         /// </summary>
+        /// <param name="id">Id do Paciente que quer ver suas consultas</param>
         /// <returns>A lista de consultas desse paciente</returns>
-        List<Consulta> ListarSomentePaciente();
+        List<Consulta> ListarSomentePaciente(int id);
 
         /// <summary>
         /// Listar todas as consultas de um Médico especifico
         /// </summary>
+        /// <param name="id">Id do Médico que quer ver suas consultas</param>
         /// <returns>A lista de consultas desse médico</returns>
-        List<Consulta> ListarSomenteMedico();
+        List<Consulta> ListarSomenteMedico(int id);
 
         /// <summary>
         /// Busca uma Consulta especifica
