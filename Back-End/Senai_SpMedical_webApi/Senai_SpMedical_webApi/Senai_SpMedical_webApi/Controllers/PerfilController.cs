@@ -33,7 +33,7 @@ namespace Senai_SpMedical_webApi.Controllers
         {
             try
             {
-                if (foto.Length > 5000)
+                if (foto.Length > 20000)
                 {
                     return BadRequest(new  { mensagem = "O Tamanho do arquivo excedeu o limite, tente novamente com um arquivo mais leve" });
                 }

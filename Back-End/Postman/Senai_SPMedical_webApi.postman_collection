@@ -183,7 +183,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Email\" : \"adm@adm.com\",\r\n    \"Senha\" : \"adm123\"\r\n}",
+							"raw": "{\r\n    \"Email\" : \"med@med.com\",\r\n    \"Senha\" : \"med123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -465,6 +465,16 @@
 				{
 					"name": "Tipo.Listar",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE2MzMxMjYyMjYsImlzcyI6IlNwTWVkaWNhbF93ZWJBcGkiLCJhdWQiOiJTcE1lZGljYWxfd2ViQXBpIn0.eATR3houQ5mEksQ9NbNM_6hz03jGnrsL7GyzUJCfLdQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -969,7 +979,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1lZEBtZWQuY29tIiwianRpIjoiMiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE2MzMxMTYxNjQsImlzcyI6IlNwTWVkaWNhbF93ZWJBcGkiLCJhdWQiOiJTcE1lZGljYWxfd2ViQXBpIn0.iU2ByaWszxLGQID2mJGHEMhexcvN8y6h3HC7DSMw84U",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1lZEBtZWQuY29tIiwianRpIjoiMiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE2MzMxMjYzMjQsImlzcyI6IlNwTWVkaWNhbF93ZWJBcGkiLCJhdWQiOiJTcE1lZGljYWxfd2ViQXBpIn0.OYc22Oaz0eJxymL97Sjd5qVnZVXOG-spLylArU3SUaM",
 									"type": "string"
 								}
 							]
@@ -1005,7 +1015,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE2MzMxMjIyNjUsImlzcyI6IlNwTWVkaWNhbF93ZWJBcGkiLCJhdWQiOiJTcE1lZGljYWxfd2ViQXBpIn0.LH82lfHB4t80PfV2Muw-m3P8FMWtpzdsBQ8xnbWqArQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1lZEBtZWQuY29tIiwianRpIjoiMiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE2MzMxMjYzMjQsImlzcyI6IlNwTWVkaWNhbF93ZWJBcGkiLCJhdWQiOiJTcE1lZGljYWxfd2ViQXBpIn0.OYc22Oaz0eJxymL97Sjd5qVnZVXOG-spLylArU3SUaM",
 									"type": "string"
 								}
 							]
@@ -1018,7 +1028,7 @@
 								{
 									"key": "foto",
 									"type": "file",
-									"src": "/C:/Users/guilherme_2/Downloads/WhatsApp Image 2021-07-04 at 12.32.54.jpeg"
+									"src": "/C:/Users/guilherme_2/Downloads/logosenai.png"
 								}
 							]
 						},
@@ -1046,7 +1056,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE2MzMxMjIyNjUsImlzcyI6IlNwTWVkaWNhbF93ZWJBcGkiLCJhdWQiOiJTcE1lZGljYWxfd2ViQXBpIn0.LH82lfHB4t80PfV2Muw-m3P8FMWtpzdsBQ8xnbWqArQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1lZEBtZWQuY29tIiwianRpIjoiMiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE2MzMxMjYzMjQsImlzcyI6IlNwTWVkaWNhbF93ZWJBcGkiLCJhdWQiOiJTcE1lZGljYWxfd2ViQXBpIn0.OYc22Oaz0eJxymL97Sjd5qVnZVXOG-spLylArU3SUaM",
 									"type": "string"
 								}
 							]

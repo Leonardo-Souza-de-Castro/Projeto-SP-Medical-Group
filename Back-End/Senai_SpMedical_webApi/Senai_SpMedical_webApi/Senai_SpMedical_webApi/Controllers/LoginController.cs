@@ -49,7 +49,7 @@ namespace Senai_SpMedical_webApi.Controllers
                         new Claim(ClaimTypes.Role, UsuarioBuscado.IdTipo.ToString())
                     };
 
-                    var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Sp-MEd-gROUp-autenTIcacao"));
+                    var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("SpMeDIcalGrouPE-chave-AUTENTICACAO"));
 
                     var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 

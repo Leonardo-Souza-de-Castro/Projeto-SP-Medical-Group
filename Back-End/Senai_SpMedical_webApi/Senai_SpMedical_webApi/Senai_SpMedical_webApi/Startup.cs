@@ -45,7 +45,7 @@ namespace Senai_SpMedical_webApi
 
                      ValidateLifetime = true,
 
-                     IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("SpMeDIcalGrouPE-cheve-AUTENTICACAO")),
+                     IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("SpMeDIcalGrouPE-chave-AUTENTICACAO")),
 
                      ClockSkew = TimeSpan.FromHours(5),
 
