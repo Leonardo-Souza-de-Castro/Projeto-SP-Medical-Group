@@ -29,6 +29,10 @@ namespace Senai_SpMedical_webApi.Repositories
             {
                 MedicoBuscado.IdClinica = medicoatualizado.IdClinica;
             }
+
+            ctx.Medicos.Update(MedicoBuscado);
+
+            ctx.SaveChanges();
         }
 
         public Medico Buscar(int id)

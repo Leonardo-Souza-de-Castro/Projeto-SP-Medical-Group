@@ -1,0 +1,1075 @@
+{
+	"info": {
+		"_postman_id": "34b6443a-1881-4357-bcee-a9f650bd1271",
+		"name": "Senai_SPMedical_webApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consulta",
+			"item": [
+				{
+					"name": "Consulta.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Consulta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Consulta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta.Buscar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Consulta/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Consulta",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta.AtualizarStatus",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdStatus\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Consulta/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Consulta",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdProntuario\" : 1,\r\n    \"IdMedico\" : 2,\r\n    \"IdStatus\" : 3,\r\n    \"IdClinica\" : 1,\r\n    \"DataConsulta\" : \"01-10-2021\",\r\n    \"IdUsuario\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Consulta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Consulta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataConsulta\": \"2021-02-10\",\r\n    \"IdMedico\" : 1,\r\n    \"IdProntuario\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Consulta/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Consulta",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Consulta/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Consulta",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\" : \"adm@adm.com\",\r\n    \"Senha\" : \"adm123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Especialidade",
+			"item": [
+				{
+					"name": "Especialidade.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Especialidade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Especialidade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Especialidade.Buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Especialidade/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Especialidade",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Especialidade.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NomeEspecialidade\" : \"Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Especialidade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Especialidade"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Especialidade.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NomeEspecialidade\" : \"Teste2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Especialidade/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Especialidade",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Especialidade.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Especialidade/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Especialidade",
+								"18"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clinicas",
+			"item": [
+				{
+					"name": "Clinica.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Clinica",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Clinica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clinica.Buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Clinica/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Clinica",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clinica.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Endereco\" : \"Rua teste, 90\",\r\n    \"HoraAbertura\" : \"10:30\",\r\n    \"HoraFechamento\" : \"23:30\",\r\n    \"Cnpj\" : \"12345678912345\",\r\n    \"NomeFantasia\" : \"Testado\",\r\n    \"RazaoSocial\" : \"Testado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Clinica",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Clinica"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clinica.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Endereco\" : \"Rua teste2, 90\",\r\n    \"HoraAbertura\" : \"10:31\",\r\n    \"HoraFechamento\" : \"23:31\",\r\n    \"NomeFantasia\" : \"Testando\",\r\n    \"RazaoSocial\" : \"Testando\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Clinica/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Clinica",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clinica.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Clinica/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Clinica",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TipoUsuario",
+			"item": [
+				{
+					"name": "Tipo.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Tipo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Tipo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tipo.Buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Tipo/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Tipo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tipo.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NomeTipo\" : \"Teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Tipo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Tipo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tipo.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"NomeTipo\" : \"Teste2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Tipo/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Tipo",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tipo.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Tipo/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Tipo",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StatusConsulta",
+			"item": [
+				{
+					"name": "StatusConsulta.Buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/StatusConsulta/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"StatusConsulta",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StatusConsulta.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Descricao\" : \"teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/StatusConsulta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"StatusConsulta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StatusConsulta.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Descricao\" : \"teste2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/StatusConsulta/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"StatusConsulta",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StatusConsulta.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/StatusConsulta/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"StatusConsulta",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "StatusConsulta.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/StatusConsulta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"StatusConsulta"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pacientes",
+			"item": [
+				{
+					"name": "Paciente.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Paciente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Paciente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Paciente.Buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Paciente/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Paciente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Paciente.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"teste\",\r\n    \"rg\": \"12345678-9   \",\r\n    \"cpf\": \"12345678912\",\r\n    \"dataNascimento\": \"2005-06-03\",\r\n    \"telefone\": \"11 3456-7654\",\r\n    \"endereco\": \"Rua teste,90, jardim teste\",\r\n    \"consulta\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Paciente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Paciente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Paciente.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"telefone\": \"11 99999-8888\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Paciente/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Paciente",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Paciente.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Paciente/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Paciente",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medico",
+			"item": [
+				{
+					"name": "Medico.Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Medico",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Medico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medico.Buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Medico/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Medico",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medico.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEspecialidade\": 5,\r\n    \"idClinica\": 1,\r\n    \"nome\": \"Teste\",\r\n    \"crm\": \"54358-SP\",\r\n    \"consulta\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Medico",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Medico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medico.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idEspecialidade\": 6,\r\n    \"nome\": \"Teste5\",\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Medico/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Medico",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medico.Atualizar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Medico/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Medico",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Medico.ListarMinhas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1lZEBtZWQuY29tIiwianRpIjoiMiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJleHAiOjE2MzMxMTYxNjQsImlzcyI6IlNwTWVkaWNhbF93ZWJBcGkiLCJhdWQiOiJTcE1lZGljYWxfd2ViQXBpIn0.iU2ByaWszxLGQID2mJGHEMhexcvN8y6h3HC7DSMw84U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Consulta/Medico",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Consulta",
+								"Medico"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Perfil",
+			"item": [
+				{
+					"name": "Imagem.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE2MzMxMjIyNjUsImlzcyI6IlNwTWVkaWNhbF93ZWJBcGkiLCJhdWQiOiJTcE1lZGljYWxfd2ViQXBpIn0.LH82lfHB4t80PfV2Muw-m3P8FMWtpzdsBQ8xnbWqArQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "foto",
+									"type": "file",
+									"src": "/C:/Users/guilherme_2/Downloads/WhatsApp Image 2021-07-04 at 12.32.54.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Perfil/imagem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Perfil",
+								"imagem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Imagem.Listar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBhZG0uY29tIiwianRpIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE2MzMxMjIyNjUsImlzcyI6IlNwTWVkaWNhbF93ZWJBcGkiLCJhdWQiOiJTcE1lZGljYWxfd2ViQXBpIn0.LH82lfHB4t80PfV2Muw-m3P8FMWtpzdsBQ8xnbWqArQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Perfil/imagem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Perfil",
+								"imagem"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,13 +1,17 @@
 ﻿using Senai_SpMedical_webApi.Domains;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai_SpMedical_webApi.Interfaces
 {
     interface IConsultaRepository
     {
+        /// <summary>
+        /// Atualizar o Status de uma consulta
+        /// </summary>
+        /// <param name="id">Id da consulta a ser atualizada</param>
+        /// <param name="Status">Novo status da consulta</param>
+        void AtualizarStatus(int id, string Status);
+
         /// <summary>
         /// Listar todas as Consultas
         /// </summary>

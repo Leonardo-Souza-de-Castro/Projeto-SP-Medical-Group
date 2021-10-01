@@ -1,10 +1,8 @@
 ﻿using Senai_SpMedical_webApi.Context;
 using Senai_SpMedical_webApi.Domains;
 using Senai_SpMedical_webApi.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai_SpMedical_webApi.Repositories
 {
@@ -20,6 +18,10 @@ namespace Senai_SpMedical_webApi.Repositories
             {
                 StatusBuscado.Descricao = StatusAtualizado.Descricao;
             }
+
+            ctx.StatusConsulta.Update(StatusBuscado);
+
+            ctx.SaveChanges();
         }
 
         public StatusConsulta Buscar(int id)

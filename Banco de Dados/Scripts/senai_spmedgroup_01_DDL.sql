@@ -59,7 +59,8 @@ Id_Prontuario Int Foreign Key References Pacientes (Id_Prontuario),
 Id_Medico Int Foreign Key References Medico (Id_Medico),
 Id_Status Int Foreign Key References Status_Consulta (Id_Status),
 Id_Clinica Int Foreign Key References Clinica (Id_Clinica),
-Data_Consulta Date Not Null 
+Data_Consulta Date Not Null,
+Descricao Varchar(250)
 );
 Go
 

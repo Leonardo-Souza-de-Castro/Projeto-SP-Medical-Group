@@ -2,10 +2,8 @@
 using Senai_SpMedical_webApi.Context;
 using Senai_SpMedical_webApi.Domains;
 using Senai_SpMedical_webApi.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai_SpMedical_webApi.Repositories
 {
@@ -18,7 +16,7 @@ namespace Senai_SpMedical_webApi.Repositories
         {
             Consulta ConsultaBuscada = Buscar(id);
 
-            if (ConsultaAtualizada.DataConsulta != Convert.ToDateTime(01-01-0001))
+            if (ConsultaAtualizada.DataConsulta != null)
             {
                 ConsultaBuscada.DataConsulta = ConsultaAtualizada.DataConsulta;
             }
@@ -26,14 +24,43 @@ namespace Senai_SpMedical_webApi.Repositories
             {
                 ConsultaBuscada.IdMedico = ConsultaAtualizada.IdMedico;
             }
-            if (ConsultaBuscada.IdProntuario != null)
+            if (ConsultaAtualizada.IdProntuario != null)
             {
                 ConsultaBuscada.IdProntuario = ConsultaAtualizada.IdProntuario;
             }
-            if (ConsultaAtualizada.IdStatus != null)
+            /*if (ConsultaAtualizada.Descricao != null)
             {
-                ConsultaBuscada.IdStatus = ConsultaAtualizada.IdStatus;
+                ConsultaBuscada.Descricao = ConsultaAtualizada.Descricao;
+            }*/
+
+            ctx.Consulta.Update(ConsultaBuscada);
+
+            ctx.SaveChanges();
+        }
+
+        public void AtualizarStatus(int id, string Status)
+        {
+            Consulta ConsultaBuscada = Buscar(id);
+
+            switch (Status)
+            {
+                case "1":
+                    ConsultaBuscada.IdStatus = 1;
+                    break;
+                case "2":
+                    ConsultaBuscada.IdStatus = 2;
+                    break;
+                case "3":
+                    ConsultaBuscada.IdStatus = 3;
+                    break;
+                default:
+                    ConsultaBuscada.IdStatus = ConsultaBuscada.IdStatus;
+                    break;
             }
+
+            ctx.Consulta.Update(ConsultaBuscada);
+
+            ctx.SaveChanges();
         }
 
         public Consulta Buscar(int id)

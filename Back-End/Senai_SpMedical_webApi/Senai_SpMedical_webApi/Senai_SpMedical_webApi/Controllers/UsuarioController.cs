@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Senai_SpMedical_webApi.Domains;
 using Senai_SpMedical_webApi.Interfaces;
 using Senai_SpMedical_webApi.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai_SpMedical_webApi.Controllers
 {
@@ -26,6 +22,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// Método responsavel por listar todos os usuarios
         /// </summary>
         /// <returns>Uma lista de usuarios</returns>
+        [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult Listar()
         {
@@ -37,6 +34,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// </summary>
         /// <param name="id">Id do usuario a ser buscado</param>
         /// <returns>Usuario encontrado</returns>
+        [Authorize(Roles = "1")]
         [HttpGet("{id}")]
         public IActionResult Buscar(int id)
         {
@@ -60,6 +58,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// </summary>
         /// <param name="UsuarioAtualizado">Dados Atualizados</param>
         /// <param name="id">Id do usuario a ser atualizado</param>
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult Atualizar(Usuario UsuarioAtualizado, int id)
         {
@@ -72,6 +71,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// Método responsavel por deletar um usuario
         /// </summary>
         /// <param name="id">Id do usuario a ser deletado</param>
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {

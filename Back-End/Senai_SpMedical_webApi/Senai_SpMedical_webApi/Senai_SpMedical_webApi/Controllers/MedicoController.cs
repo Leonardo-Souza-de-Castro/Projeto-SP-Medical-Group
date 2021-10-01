@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Senai_SpMedical_webApi.Domains;
 using Senai_SpMedical_webApi.Interfaces;
 using Senai_SpMedical_webApi.Repositories;
@@ -23,6 +24,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// Método responsavel por listar todos os médicos
         /// </summary>
         /// <returns>Uma lista de médicos</returns>
+        [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult Listar()
         {
@@ -34,6 +36,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// </summary>
         /// <param name="id">Id do médico a ser buscado</param>
         /// <returns>Medico encontrado</returns>
+        [Authorize(Roles = "1")]
         [HttpGet ("{id}")]
         public IActionResult Buscar(int id)
         {
@@ -44,6 +47,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// Método responsavel por cadastrar um novo médico
         /// </summary>
         /// <param name="MedicoNovo">Objeto do tipo Médico a ser cadastrado</param>
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Medico MedicoNovo)
         {
@@ -57,6 +61,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// </summary>
         /// <param name="MedicoAtualizado">Dados Atualizados</param>
         /// <param name="id">Id do médico a ser atualizado</param>
+        [Authorize(Roles = "1")]
         [HttpPut ("{id}")]
         public IActionResult Atualizar(Medico MedicoAtualizado, int id)
         {
@@ -69,6 +74,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// Método responsavel por deletar um médico
         /// </summary>
         /// <param name="id">Id do médico a ser deletado</param>
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {

@@ -1,10 +1,8 @@
 ﻿using Senai_SpMedical_webApi.Context;
 using Senai_SpMedical_webApi.Domains;
 using Senai_SpMedical_webApi.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai_SpMedical_webApi.Repositories
 {
@@ -36,10 +34,14 @@ namespace Senai_SpMedical_webApi.Repositories
             {
                 pacientebuscado.Cpf = PacienteAtualizado.Cpf;
             }
-            if (PacienteAtualizado.DataNascimento != Convert.ToDateTime(01 - 01 - 0001))
+            if (PacienteAtualizado.DataNascimento != null)
             {
                 pacientebuscado.DataNascimento = PacienteAtualizado.DataNascimento;
             }
+
+            ctx.Pacientes.Update(pacientebuscado);
+
+            ctx.SaveChanges();
         }
 
         public Paciente Buscar(int id)

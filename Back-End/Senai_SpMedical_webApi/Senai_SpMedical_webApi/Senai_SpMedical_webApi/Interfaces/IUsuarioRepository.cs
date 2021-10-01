@@ -15,11 +15,18 @@ namespace Senai_SpMedical_webApi.Interfaces
         Usuario Login(string email, string senha);
 
         /// <summary>
-        /// Método responsavel por salvar uma nova foto em um perfil
+        /// Método responsavel por salvar uma nova foto no formato png em um perfil
         /// </summary>
         /// <param name="foto">Foto a ser salva</param>
         /// <param name="id_usuario">Id do Perfil que quer cadastrar uma foto</param>
-        void SalvarPerfilDir(IFormFile foto, int id_usuario);
+        void SalvarPerfilDirPNG(IFormFile foto, int id_usuario);
+
+        /// <summary>
+        /// Método responsavel por salvar uma nova foto no formato jpg em um perfil
+        /// </summary>
+        /// <param name="foto">Foto a ser salva</param>
+        /// <param name="id_usuario">Id do Perfil que quer cadastrar uma foto</param>
+        void SalvarPerfilDirJPG(IFormFile foto, int id_usuario);
 
         /// <summary>
         /// Método para consultar uma foto para cadastro

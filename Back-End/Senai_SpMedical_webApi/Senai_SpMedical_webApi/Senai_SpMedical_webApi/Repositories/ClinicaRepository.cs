@@ -4,7 +4,6 @@ using Senai_SpMedical_webApi.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai_SpMedical_webApi.Repositories
 {
@@ -41,6 +40,10 @@ namespace Senai_SpMedical_webApi.Repositories
             {
                 clinicabuscada.RazaoSocial = ClinicaAtualizada.RazaoSocial;
             }
+
+            ctx.Clinicas.Update(clinicabuscada);
+
+            ctx.SaveChanges();
         }
 
         public Clinica Buscar(int id)

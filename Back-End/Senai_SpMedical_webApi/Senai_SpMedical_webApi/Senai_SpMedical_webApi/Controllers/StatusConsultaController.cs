@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Senai_SpMedical_webApi.Domains;
 using Senai_SpMedical_webApi.Interfaces;
 using Senai_SpMedical_webApi.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai_SpMedical_webApi.Controllers
 {
@@ -15,6 +11,7 @@ namespace Senai_SpMedical_webApi.Controllers
     [ApiController]
 
     // COntroller Respopnsavel pelo CRUD de StatusConsulta
+    [Authorize(Roles = "1")]
     public class StatusConsultaController : ControllerBase
     {
         private IStatusConsultaRepository _StatusConsultaRepository { get; set; }

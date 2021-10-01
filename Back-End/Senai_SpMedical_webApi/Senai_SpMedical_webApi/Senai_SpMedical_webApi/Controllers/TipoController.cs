@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Senai_SpMedical_webApi.Domains;
 using Senai_SpMedical_webApi.Interfaces;
 using Senai_SpMedical_webApi.Repositories;
@@ -23,6 +24,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// Listar todos os TipoUsuarios
         /// </summary>
         /// <returns>Uma lista de TipoUsuarios</returns>
+        [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult Listar()
         {
@@ -44,6 +46,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// Cadastrar um novo TipoUsuario
         /// </summary>
         /// <param name="TipoNovo">Dados a serem cadastrados</param>
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(TipoUsuario TipoNovo)
         {
@@ -57,6 +60,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// </summary>
         /// <param name="TipoAtualizado">Dados Atualizados</param>
         /// <param name="id">Id do TipoUsuario a ser atualizada</param>
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult Atualizar(TipoUsuario TipoAtualizado, int id)
         {
@@ -69,6 +73,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// Deletar um TipoUsuario
         /// </summary>
         /// <param name="id">Id do TipoUsuario a ser deletado</param>
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {

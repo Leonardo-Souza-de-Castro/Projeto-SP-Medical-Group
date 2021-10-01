@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Senai_SpMedical_webApi.Repositories
 {
@@ -86,6 +85,10 @@ namespace Senai_SpMedical_webApi.Repositories
             string nome_imagem = id_usuario.ToString() + ".png";
             string caminho = Path.Combine("Perfil", nome_imagem);
 
+            string nome_imagem_jpg = id_usuario.ToString() + ".jpg";
+            string caminho_jpg = Path.Combine("Perfil", nome_imagem_jpg);
+
+            //Esse primeiro if ve se a imagem é do tipo png e se for mostra ela
             if (File.Exists(caminho))
             {
                 byte[] byteArquivos = File.ReadAllBytes(caminho);
@@ -93,14 +96,33 @@ namespace Senai_SpMedical_webApi.Repositories
                 return Convert.ToBase64String(byteArquivos);
             }
 
+            //Esse else if ve se a imagem é do tipo jpg e se for mostra ela
+            else if (File.Exists(caminho_jpg))
+            {
+                byte[] byteArquivos = File.ReadAllBytes(caminho_jpg);
+
+                return Convert.ToBase64String(byteArquivos);
+            }
+
+            //Caso não seja de nenhum destes tipos retorna nulo
             return null;
         }
 
-        public void SalvarPerfilDir(IFormFile foto, int id_usuario)
+        public void SalvarPerfilDirPNG(IFormFile foto, int id_usuario)
         {
             string nome_foto = id_usuario.ToString() + ".png";
 
-            using (var stream = new FileStream(Path.Combine("perfil", nome_foto), FileMode.Create))
+            using (var stream = new FileStream(Path.Combine("Perfil", nome_foto), FileMode.Create))
+            {
+                foto.CopyTo(stream);
+            }
+        }
+
+        public void SalvarPerfilDirJPG(IFormFile foto, int id_usuario)
+        {
+            string nome_foto = id_usuario.ToString() + ".jpg";
+
+            using (var stream = new FileStream(Path.Combine("Perfil", nome_foto), FileMode.Create))
             {
                 foto.CopyTo(stream);
             }

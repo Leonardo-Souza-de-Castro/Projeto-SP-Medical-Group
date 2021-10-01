@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Senai_SpMedical_webApi.Domains;
 using Senai_SpMedical_webApi.Interfaces;
 using Senai_SpMedical_webApi.Repositories;
@@ -22,6 +23,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// Listar todas as especialidades
         /// </summary>
         /// <returns>Uma lista de Especialidades</returns>
+        [Authorize]
         [HttpGet]
         public IActionResult Listar()
         {
@@ -33,6 +35,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// </summary>
         /// <param name="id">Id da Especialidade buscada</param>
         /// <returns>A Especialidade com aquele Id</returns>
+        [Authorize(Roles = "1")]
         [HttpGet("{id}")]
         public IActionResult Buscar(int id)
         {
@@ -42,6 +45,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// Cadastrar uma nova especialidade
         /// </summary>
         /// <param name="EspecialidadeNova">Dados a serem cadastrados</param>
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Especialidade EspecialidadeNova)
         {
@@ -55,6 +59,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// </summary>
         /// <param name="EspecialidadeAtualizada">Dados Atualizados</param>
         /// <param name="id">Id da Especialidade a ser atualizada</param>
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult Atualizar(Especialidade EspecialidadeAtualizada, int id)
         {
@@ -67,6 +72,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// Deletar uma Especialidade
         /// </summary>
         /// <param name="id">Id da especialidade a ser deletada</param>
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {

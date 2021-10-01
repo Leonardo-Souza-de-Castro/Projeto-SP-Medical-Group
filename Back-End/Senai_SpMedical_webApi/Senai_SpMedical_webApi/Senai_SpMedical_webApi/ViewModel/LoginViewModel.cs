@@ -10,5 +10,7 @@ namespace Senai_SpMedical_webApi.ViewModel
         public string Email { get; set; }
 
         public string Senha { get; set; }
+
+        public int IdTipo { get; set; }
     }
 }
