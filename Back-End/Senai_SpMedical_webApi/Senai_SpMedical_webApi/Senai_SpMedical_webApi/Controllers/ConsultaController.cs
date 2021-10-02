@@ -32,7 +32,16 @@ namespace Senai_SpMedical_webApi.Controllers
         [HttpGet]
         public IActionResult Listar()
         {
-            return Ok(_ConsultaRepository.Listar());
+            try
+            {
+                return Ok(_ConsultaRepository.Listar());
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         /// <summary>
@@ -44,7 +53,16 @@ namespace Senai_SpMedical_webApi.Controllers
         [HttpGet("{id}")]
         public IActionResult Buscar(int id)
         {
-            return Ok(_ConsultaRepository.Buscar(id));
+            try
+            {
+                return Ok(_ConsultaRepository.Buscar(id));
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         /// <summary>
@@ -55,9 +73,17 @@ namespace Senai_SpMedical_webApi.Controllers
         [HttpPost]
         public IActionResult Cadastar(Consulta ConsultaNova)
         {
-            _ConsultaRepository.Cadastrar(ConsultaNova);
+            try
+            {
+                _ConsultaRepository.Cadastrar(ConsultaNova);
 
-            return StatusCode(201);
+                return StatusCode(201);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
         }
 
         /// <summary>
@@ -69,9 +95,18 @@ namespace Senai_SpMedical_webApi.Controllers
         [HttpPut("{id}")]
         public IActionResult Atualizar(Consulta ConsultaAtualizada, int id)
         {
-            _ConsultaRepository.Atualizar(ConsultaAtualizada, id);
+            try
+            {
+                _ConsultaRepository.Atualizar(ConsultaAtualizada, id);
 
-            return StatusCode(204);
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         /// <summary>
@@ -82,9 +117,14 @@ namespace Senai_SpMedical_webApi.Controllers
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
-            _ConsultaRepository.Deletar(id);
+            try
+            {
+                _ConsultaRepository.Deletar(id);
 
-            return StatusCode(203);
+                return StatusCode(203);
+            }
+            catch (Exception ex) { return BadRequest(ex.Message); }
+            
         }
 
         /// <summary>
@@ -116,8 +156,19 @@ namespace Senai_SpMedical_webApi.Controllers
         [HttpGet("Medico")]
         public IActionResult ListarSomenteMedico()
         {
-            int id = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
-            return Ok(_ConsultaRepository.ListarSomenteMedico(id));
+            try
+            {
+                int id = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                return Ok(_ConsultaRepository.ListarSomenteMedico(id));
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(new { 
+                mensagem = "É necessario estar logado para ver as suas consultas"
+                }) ;
+            }
+            
         }
 
         /// <summary>
@@ -128,8 +179,19 @@ namespace Senai_SpMedical_webApi.Controllers
         [HttpGet("Paciente")]
         public IActionResult ListarSomentePaciente()
         {
-            int id = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
-            return Ok(_ConsultaRepository.ListarSomentePaciente(id));
+            try
+            {
+                int id = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                return Ok(_ConsultaRepository.ListarSomentePaciente(id));
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(new
+                {
+                    mensagem = "É necessario estar logado para ver as suas consultas", ex
+                });
+            }
         }
     }
 }

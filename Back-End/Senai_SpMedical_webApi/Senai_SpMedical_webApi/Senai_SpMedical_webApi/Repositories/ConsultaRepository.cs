@@ -28,10 +28,10 @@ namespace Senai_SpMedical_webApi.Repositories
             {
                 ConsultaBuscada.IdProntuario = ConsultaAtualizada.IdProntuario;
             }
-            /*if (ConsultaAtualizada.Descricao != null)
+            if (ConsultaAtualizada.Descricao != null)
             {
                 ConsultaBuscada.Descricao = ConsultaAtualizada.Descricao;
-            }*/
+            }
 
             ctx.Consulta.Update(ConsultaBuscada);
 

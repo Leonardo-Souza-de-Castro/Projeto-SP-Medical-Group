@@ -13,6 +13,7 @@ namespace Senai_SpMedical_webApi.Domains
         public int? IdStatus { get; set; }
         public int? IdClinica { get; set; }
         public DateTime DataConsulta { get; set; }
+        public string Descricao { get; set; }
 
         public virtual Clinica IdClinicaNavigation { get; set; }
         public virtual Medico IdMedicoNavigation { get; set; }

@@ -45,6 +45,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// Método responsavel por cadastrar um novo usuario
         /// </summary>
         /// <param name="UsuarioNovo">Objeto do tipo usuario a ser cadastrado</param>
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Usuario UsuarioNovo)
         {

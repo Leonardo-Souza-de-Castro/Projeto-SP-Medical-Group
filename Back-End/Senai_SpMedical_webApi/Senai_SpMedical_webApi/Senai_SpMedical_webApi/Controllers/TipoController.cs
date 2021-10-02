@@ -36,6 +36,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// </summary>
         /// <param name="id">Id do TipoUsuario buscado</param>
         /// <returns>O TipoUsuario com aquele Id</returns>
+        [Authorize(Roles = "1")]
         [HttpGet("{id}")]
         public IActionResult Buscar(int id)
         {

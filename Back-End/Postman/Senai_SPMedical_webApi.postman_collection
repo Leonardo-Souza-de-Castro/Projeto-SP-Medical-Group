@@ -183,7 +183,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Email\" : \"med@med.com\",\r\n    \"Senha\" : \"med123\"\r\n}",
+							"raw": "{\r\n    \"Email\" : \"paci@paci.com\",\r\n    \"Senha\" : \"pac123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -840,6 +840,37 @@
 								"api",
 								"Paciente",
 								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Paciente.ListarMinhasConsultas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBhY2lAcGFjaS5jb20iLCJqdGkiOiIzIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMyIsImV4cCI6MTYzMzIwNzE3NywiaXNzIjoiU3BNZWRpY2FsX3dlYkFwaSIsImF1ZCI6IlNwTWVkaWNhbF93ZWJBcGkifQ.NoO7YXXn62vHqhcIih7qAKmpB82xWs4Hb0gOmz4C2hE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Consulta/Paciente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Consulta",
+								"Paciente"
 							]
 						}
 					},
