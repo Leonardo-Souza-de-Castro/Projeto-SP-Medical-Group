@@ -16,10 +16,8 @@ namespace Senai_SpMedical_webApi.Repositories
         {
             Consulta ConsultaBuscada = Buscar(id);
 
-            if (ConsultaAtualizada.DataConsulta != null)
-            {
-                ConsultaBuscada.DataConsulta = ConsultaAtualizada.DataConsulta;
-            }
+            ConsultaBuscada.DataConsulta = ConsultaAtualizada.DataConsulta;
+            
             if (ConsultaAtualizada.IdMedico != null)
             {
                 ConsultaBuscada.IdMedico = ConsultaAtualizada.IdMedico;

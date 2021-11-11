@@ -46,7 +46,8 @@ namespace Senai_SpMedical_webApi.Controllers
                     {
                         new Claim(JwtRegisteredClaimNames.Email, UsuarioBuscado.Email),
                         new Claim(JwtRegisteredClaimNames.Jti, UsuarioBuscado.IdUsuario.ToString()),
-                        new Claim(ClaimTypes.Role, UsuarioBuscado.IdTipo.ToString())
+                        new Claim(ClaimTypes.Role, UsuarioBuscado.IdTipo.ToString()),
+                        new Claim ("role", UsuarioBuscado.IdTipo.ToString())
                     };
 
                     var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("SpMeDIcalGrouPE-chave-AUTENTICACAO"));
