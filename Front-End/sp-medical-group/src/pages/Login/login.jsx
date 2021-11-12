@@ -31,10 +31,10 @@ export default class Login extends Component{
                        this.props.history.push('/consultasmedico')
                        break;
                    case '3':
-                    this.props.history.push('/ConsultasPaciente')
+                    this.props.history.push('/consultaspaciente')
                        break;
                    case '1':
-                    this.props.history.push('/TodasConsultas')
+                    this.props.history.push('/todasasconsultas')
                        break;
                
                    default:
