@@ -1,0 +1,5 @@
+nome do servidor: medical-group.database.windows.net
+
+logon do adm: leonardo
+
+senha: guilherme/85
