@@ -67,6 +67,17 @@ namespace Senai_SpMedical_webApi
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorPolicy",
+                                builder =>
+                                {
+                                    builder.WithOrigins("http://localhost:3000")
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod();
+                                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -78,6 +89,8 @@ namespace Senai_SpMedical_webApi
             }
 
             app.UseRouting();
+
+            app.UseCors("CorPolicy");
 
             app.UseSwagger();
 
