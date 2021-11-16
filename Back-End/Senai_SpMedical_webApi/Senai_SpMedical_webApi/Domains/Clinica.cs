@@ -9,6 +9,7 @@ namespace Senai_SpMedical_webApi.Domains
     {
         public Clinica()
         {
+            Consulta = new HashSet<Consulta>();
             Medicos = new HashSet<Medico>();
         }
 
@@ -20,6 +21,7 @@ namespace Senai_SpMedical_webApi.Domains
         public string NomeFantasia { get; set; }
         public string RazaoSocial { get; set; }
 
+        public virtual ICollection<Consulta> Consulta { get; set; }
         public virtual ICollection<Medico> Medicos { get; set; }
     }
 }
