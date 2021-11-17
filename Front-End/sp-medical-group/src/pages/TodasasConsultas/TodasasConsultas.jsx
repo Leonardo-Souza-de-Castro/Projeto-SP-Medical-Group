@@ -5,7 +5,7 @@ export default function ConsultaPaciente() {
     const [listatodasconsultas, setListastodasconsultas] = useState([]);
 
     function BuscarMeusEventos() {
-        axios('http://localhost:5000/api/Consulta/Paciente', {
+        axios('http://localhost:5000/api/Consulta/', {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }
