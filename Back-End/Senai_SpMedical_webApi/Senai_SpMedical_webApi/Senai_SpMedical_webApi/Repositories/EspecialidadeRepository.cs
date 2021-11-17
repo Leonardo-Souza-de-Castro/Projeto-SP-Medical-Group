@@ -1,4 +1,4 @@
-﻿using Senai_SpMedical_webApi.Context;
+﻿using Senai_SpMedical_webApi.Contexts;
 using Senai_SpMedical_webApi.Domains;
 using Senai_SpMedical_webApi.Interfaces;
 using System.Collections.Generic;

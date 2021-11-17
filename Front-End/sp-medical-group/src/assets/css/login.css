@@ -36,6 +36,15 @@
     height: 520px;
 }
 
+.box-banner-login{
+    background: linear-gradient(90.05deg, #669AFB 0.05%, #A190E5 99.97%);
+    height: 100vh;
+    width: 34vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .box-form{
     display: flex;
     flex-direction: column;
@@ -85,4 +94,15 @@
     height: 20%;
     color: white;
     background-color: #8B5EDB;
+}
+
+.Entrando:hover{
+    cursor: pointer;
+}
+
+.Mensagem-erro{
+    color: red;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }

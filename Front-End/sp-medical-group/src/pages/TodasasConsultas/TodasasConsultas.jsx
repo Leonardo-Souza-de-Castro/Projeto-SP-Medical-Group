@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
+import imagem_banner from '../../assets/img/undraw_Browsing_online_re_umsa 1.svg'
+import logo from '../../assets/img/Logo_vbranca.svg'
+
 export default function ConsultaPaciente() {
     const [listatodasconsultas, setListastodasconsultas] = useState([]);
 
@@ -21,8 +24,8 @@ export default function ConsultaPaciente() {
     return (
         <div>
             <section class="container-banner">
-                <img src="../assets/undraw_Browsing_online_re_umsa 1.svg" alt="Banner Principal" />
-                <img src="../assets/Logo_vbranca.svg" alt="Logo Site" class="logo-banner" />
+                <img src={imagem_banner} alt="Banner Principal" />
+                <img src={logo} alt="Logo Site" class="logo-banner" />
             </section>
             <section class="container-consultas">
                 <h1>Todas as Consultas</h1>

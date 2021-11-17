@@ -152,7 +152,9 @@ export default class Cadastrar extends Component {
                                         );
                                     })}
                                 </select>
-                                <button>Cadastrar</button>
+                                {
+                                    this.state.isLoading === true ? <button disabled>Cadastrando...</button>: <button className="Entrando">Cadastrar</button>
+                                }
                         </form>
                     </section>
                 </main>

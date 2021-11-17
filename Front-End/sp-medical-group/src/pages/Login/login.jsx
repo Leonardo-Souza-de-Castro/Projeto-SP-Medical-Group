@@ -78,8 +78,10 @@ export default class Login extends Component {
                                 <div className="box-input-login">
                                     <input type="text" placeholder="Email" name="email" value={this.state.email} onChange={this.atualizaStateCampo} />
                                     <input type="password" placeholder="Senha" name="senha" value={this.state.senha} onChange={this.atualizaStateCampo} />
-                                    <span>{this.state.mensagemErro}</span>
-                                    <button>Entrar</button>
+                                    <span className="Mensagem-erro">{this.state.mensagemErro}</span>
+                                    {
+                                        this.state.isLoading === true ? <button disabled>Entrando...</button>: <button className="Entrando">Entrar</button>
+                                    }
                                 </div>
                             </form>
                         </div>

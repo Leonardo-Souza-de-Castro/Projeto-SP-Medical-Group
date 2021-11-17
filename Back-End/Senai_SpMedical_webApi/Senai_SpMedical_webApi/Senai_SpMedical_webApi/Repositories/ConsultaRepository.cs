@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Senai_SpMedical_webApi.Context;
+using Senai_SpMedical_webApi.Contexts;
 using Senai_SpMedical_webApi.Domains;
 using Senai_SpMedical_webApi.Interfaces;
 using System.Collections.Generic;
@@ -84,7 +84,7 @@ namespace Senai_SpMedical_webApi.Repositories
 
         public List<Consulta> Listar()
         {
-            return ctx.Consulta.Include(C => C.IdMedicoNavigation.IdEspecialidadeNavigation).Include(C => C.IdMedicoNavigation).Include(C => C.IdProntuarioNavigation).Include(C => C.IdStatusNavigation).ToList();
+            return ctx.Consulta.Include(C => C.IdMedicoNavigation).Include(C => C.IdProntuarioNavigation).Include(C => C.IdStatusNavigation).Include(C => C.IdMedicoNavigation.IdEspecialidadeNavigation).ToList();
         }
 
         public List<Consulta> ListarSomenteMedico(int id)
@@ -95,7 +95,7 @@ namespace Senai_SpMedical_webApi.Repositories
         public List<Consulta> ListarSomentePaciente(int id)
         {
             //return ctx.Consulta.Include(c => c.IdMedicoNavigation.IdClinicaNavigation).ToList();
-            return ctx.Consulta.Include(C => C.IdMedicoNavigation).Include(C => C.IdProntuarioNavigation).Include(C => C.IdStatusNavigation).Where(P => P.IdProntuario == id).ToList();
+            return ctx.Consulta.Include(C => C.IdMedicoNavigation.IdEspecialidadeNavigation).Include(C => C.IdMedicoNavigation.IdClinicaNavigation).Include(C => C.IdProntuarioNavigation).Include(C => C.IdStatusNavigation).Where(P => P.IdProntuario == id).ToList();
         }
     }
 }

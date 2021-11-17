@@ -16,6 +16,6 @@ namespace Senai_SpMedical_webApi.Domains
 
         public virtual Medico IdMedicoNavigation { get; set; }
         public virtual Paciente IdProntuarioNavigation { get; set; }
-        public virtual StatusConsultum IdStatusNavigation { get; set; }
+        public virtual StatusConsulta IdStatusNavigation { get; set; }
     }
 }

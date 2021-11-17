@@ -53,7 +53,7 @@ export default function ConsultaPaciente() {
                                                 hour: 'numeric', minute: 'numeric',
                                                 hour12: false
                                             }).format(new Date(minhaConsulta.dataConsulta))}</span>
-                                            <span className="dados-consulta">{minhaConsulta.idMedicoNavigation.nome}</span>
+                                            <span className="dados-consulta">{minhaConsulta.idMedicoNavigation.nome} / {minhaConsulta.idMedicoNavigation.idEspecialidadeNavigation.nomeEspecialidade}</span>
                                         </div>
                                     </div>
                                     <div className="box-status">

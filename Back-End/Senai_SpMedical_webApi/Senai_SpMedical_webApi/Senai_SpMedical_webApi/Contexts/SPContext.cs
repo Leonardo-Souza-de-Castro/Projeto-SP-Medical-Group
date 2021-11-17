@@ -23,7 +23,7 @@ namespace Senai_SpMedical_webApi.Contexts
         public virtual DbSet<Especialidade> Especialidades { get; set; }
         public virtual DbSet<Medico> Medicos { get; set; }
         public virtual DbSet<Paciente> Pacientes { get; set; }
-        public virtual DbSet<StatusConsultum> StatusConsulta { get; set; }
+        public virtual DbSet<StatusConsulta> StatusConsulta { get; set; }
         public virtual DbSet<TipoUsuario> TipoUsuarios { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
 
@@ -31,7 +31,6 @@ namespace Senai_SpMedical_webApi.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Data Source=NOTE0113F1\\SQLEXPRESS; initial catalog=SP_Medical_Group; user Id=sa; pwd=Senai@132;");
             }
         }
@@ -215,7 +214,7 @@ namespace Senai_SpMedical_webApi.Contexts
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<StatusConsultum>(entity =>
+            modelBuilder.Entity<StatusConsulta>(entity =>
             {
                 entity.HasKey(e => e.IdStatus)
                     .HasName("PK__Status_C__E39037C605626849");

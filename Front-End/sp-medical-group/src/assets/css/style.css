@@ -240,3 +240,7 @@
     font-weight: bold;
     color: white;
 }
+
+.Entrando:hover{
+    cursor: pointer;
+}
