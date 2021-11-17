@@ -8,11 +8,7 @@ export default function ConsultaPaciente() {
     const [listatodasconsultas, setListastodasconsultas] = useState([]);
 
     function BuscarMeusEventos() {
-<<<<<<< HEAD
         axios('http://localhost:5000/api/Consulta/', {
-=======
-        axios('http://localhost:5000/api/Consulta', {
->>>>>>> 87f3844fae63383150e02516f2364da4b8935c71
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }
