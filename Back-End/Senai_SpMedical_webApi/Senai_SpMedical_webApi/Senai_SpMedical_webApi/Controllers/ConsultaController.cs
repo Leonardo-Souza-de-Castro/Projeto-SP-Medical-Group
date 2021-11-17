@@ -165,7 +165,7 @@ namespace Senai_SpMedical_webApi.Controllers
             {
 
                 return BadRequest(new { 
-                mensagem = "É necessario estar logado para ver as suas consultas"
+                mensagem = "É necessario estar logado para ver as suas consultas", ex
                 }) ;
             }
             

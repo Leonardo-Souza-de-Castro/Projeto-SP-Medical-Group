@@ -1,6 +1,7 @@
-﻿using Senai_SpMedical_webApi.Context;
+﻿using Senai_SpMedical_webApi.Contexts;
 using Senai_SpMedical_webApi.Domains;
 using Senai_SpMedical_webApi.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -34,7 +35,7 @@ namespace Senai_SpMedical_webApi.Repositories
             {
                 pacientebuscado.Cpf = PacienteAtualizado.Cpf;
             }
-            if (PacienteAtualizado.DataNascimento != null)
+            if (PacienteAtualizado.DataNascimento > DateTime.Now)
             {
                 pacientebuscado.DataNascimento = PacienteAtualizado.DataNascimento;
             }
