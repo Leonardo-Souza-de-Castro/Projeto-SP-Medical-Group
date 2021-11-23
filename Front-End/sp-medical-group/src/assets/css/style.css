@@ -183,6 +183,18 @@
     width: 100%;
 }
 
+.box-alterar-descricao{
+    width: 45%;
+    height: 36%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.IconeAlterarDescricao{
+    font-size: 90px;
+}
+
 /* Pagina de Cadastro de Consulta */
 .container-formulario{
     background-color: #BAC2E9;

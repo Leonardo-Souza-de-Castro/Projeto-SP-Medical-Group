@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useHistory } from 'react'
 import axios from 'axios'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { Link, Redirect } from 'react-router-dom';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit } from '@fortawesome/free-regular-svg-icons'
 
 import imagem_banner from '../../assets/img/undraw_medicine_b1ol.svg'
 import logo from '../../assets/img/Logo_vbranca.svg'
 
 export default function ConsultaMedico() {
     const [listaminhasconsultas, setListasminhasconsultas] = useState([]);
-
     function BuscarMeusEventos() {
         axios('http://localhost:5000/api/Consulta/Medico', {
             headers: {
@@ -32,7 +33,6 @@ export default function ConsultaMedico() {
             <section class="container-consultas">
                 <h1>Minhas Consultas</h1>
 
-                {/* <Link to="/"> <FontAwesomeIcon icon={faCoffee} /> </Link> */}
                 {
                     listaminhasconsultas.map((minhaConsulta) => {
                         return (
@@ -59,18 +59,19 @@ export default function ConsultaMedico() {
                                                         minhaConsulta.idStatus === 2 ? <hr className="divisoria-vermelha" />
 
                                                             : <hr className="divisoria-amarela" />)
-                                                }                                            </div>
+                                                }
+                                            </div>
                                             <div class="box-alterar-descricao">
-                                                {/* <a href="Descricao.html"><img src="../assets/ferramenta-lapis 4.png" alt="Icone de Edição"></a> */}
+                                                <Link to={{pathname: '/atualizar', state: {id: minhaConsulta.idConsulta}}}><FontAwesomeIcon icon={faEdit} className="IconeAlterarDescricao" /></Link>
                                             </div>
                                         </div>
                                     </div>
                                 </section>
-                        </div>
-            )
-        })
-    }
-    </section>
+                            </div>
+                        )
+                    })
+                }
+            </section>
         </div>
     )
 }

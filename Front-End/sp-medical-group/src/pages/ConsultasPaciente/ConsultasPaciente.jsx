@@ -9,7 +9,7 @@ import mapa from '../../assets/img/Group 1.png'
 
 export default function ConsultaPaciente() {
     const [listaminhasconsultas, setListasminhasconsultas] = useState([]);
-
+    
     function BuscarMeusEventos() {
         axios('http://localhost:5000/api/Consulta/Paciente', {
             headers: {

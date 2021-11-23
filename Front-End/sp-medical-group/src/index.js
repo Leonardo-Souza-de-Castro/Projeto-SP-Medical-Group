@@ -20,6 +20,7 @@ import ConsultaPaciente from './pages/ConsultasPaciente/ConsultasPaciente';
 import TodasasConsultas from './pages/TodasasConsultas/TodasasConsultas';
 import Cadastrar from './pages/CadastrarConsultas/Cadastrar';
 import NotFound from './pages/notFound/notFound';
+import AtualizarDescricao from './pages/AtualizarDescricao/Descricao.jsx';
 
 const routing = (
   <Router>
@@ -31,6 +32,7 @@ const routing = (
         <Route path="/consultaspaciente" component={ConsultaPaciente} /> {/* Cosultas do Paciente */}
         <Route path="/todasasconsultas" component={TodasasConsultas} /> {/* Todas as Consultas */}
         <Route path="/cadastrar" component={Cadastrar} /> {/* Cadastrar Consulta */}
+        <Route path="/atualizar" component={AtualizarDescricao} /> {/* Cadastrar Consulta */}
         <Route path="/notFound" component={NotFound} /> {/* Not Found */}
         <Redirect to="/notFound" />
       </Switch>
