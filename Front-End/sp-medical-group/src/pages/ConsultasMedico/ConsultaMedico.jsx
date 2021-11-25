@@ -26,22 +26,22 @@ export default function ConsultaMedico() {
 
     return (
         <div>
-            <section class="container-banner">
+            <section className="container-banner">
                 <img src={imagem_banner} alt="Banner Principal" />
-                <img src={logo} alt="Logo Site" class="logo-banner" />
+                <img src={logo} alt="Logo Site" className="logo-banner" />
             </section>
-            <section class="container-consultas">
+            <section className="container-consultas">
                 <h1>Minhas Consultas</h1>
 
                 {
                     listaminhasconsultas.map((minhaConsulta) => {
                         return (
-                            <div className='div-container'>
-                                <section class="container-consulta">
-                                    <div class="box-total">
-                                        <div class="box-paciente">
-                                            <img src="../assets/user 1.png" alt="Foto do Usuario" class="foto-perfil" />
-                                            <div class="box-info-paciente">
+                            <div className='div-container' key={minhaConsulta.idConsulta}>
+                                <section className="container-consulta">
+                                    <div className="box-total">
+                                        <div className="box-paciente">
+                                            <img src="../assets/user 1.png" alt="Foto do Usuario" className="foto-perfil" />
+                                            <div className="box-info-paciente">
                                                 <span className="dados-consulta">{Intl.DateTimeFormat("pt-BR", {
                                                     year: 'numeric', month: 'numeric', day: 'numeric',
                                                     hour: 'numeric', minute: 'numeric',
@@ -50,8 +50,8 @@ export default function ConsultaMedico() {
                                                 <span className="dados-consulta">{minhaConsulta.idProntuarioNavigation.nome}</span>
                                             </div>
                                         </div>
-                                        <div class="box-opcoes">
-                                            <div class="box-status reduz-espacamento">
+                                        <div className="box-opcoes">
+                                            <div className="box-status reduz-espacamento">
                                                 <span>{minhaConsulta.idStatusNavigation.descricao}</span>
                                                 {
                                                     (minhaConsulta.idStatus === 1 ? <hr className="divisoria" /> :
@@ -61,7 +61,7 @@ export default function ConsultaMedico() {
                                                             : <hr className="divisoria-amarela" />)
                                                 }
                                             </div>
-                                            <div class="box-alterar-descricao">
+                                            <div className="box-alterar-descricao">
                                                 <Link to={{pathname: '/atualizar', state: {id: minhaConsulta.idConsulta}}}><FontAwesomeIcon icon={faEdit} className="IconeAlterarDescricao" /></Link>
                                             </div>
                                         </div>

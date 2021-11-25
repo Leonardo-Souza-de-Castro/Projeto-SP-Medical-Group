@@ -49,7 +49,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// </summary>
         /// <param name="id">Id da Consulta buscada</param>
         /// <returns>A Consulta com aquele Id</returns>
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1, 2")]
         [HttpGet("{id}")]
         public IActionResult Buscar(int id)
         {
