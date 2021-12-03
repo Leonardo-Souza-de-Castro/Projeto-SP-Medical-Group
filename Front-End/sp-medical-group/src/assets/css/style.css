@@ -101,6 +101,7 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 26px;
     outline: none;
+    resize: none;
 }
 
 .box-botao{

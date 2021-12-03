@@ -14,6 +14,10 @@ export default class Descricao extends Component {
         }
     }
 
+    atualizaStateCampo = (campo) => {
+        this.setState({ [campo.target.name]: campo.target.value });
+    };
+
     buscarConsulta = () => {
         console.log(this.state.idConsulta)
         axios('http://localhost:5000/api/Consulta/' + this.state.idConsulta, {
@@ -108,9 +112,9 @@ export default class Descricao extends Component {
                             <h2>Nova Descrição:</h2>
                             <form type='submit'>
                                 <textarea cols="20" rows="7" placeholder="Insira a descrição da consulta realizada aqui:"
-                                    className="input-descricao"></textarea>
+                                    className="input-descricao" name="descricao" value={this.state.descricao} onChange={this.atualizaStateCampo}></textarea>
                                 <div className="box-botao">
-                                    <button className="botao-enviar">Enviar</button>
+                                    <button className="botao-enviar" onClick={this.atualizarDescricao}>Enviar</button>
                                 </div>
                             </form>
                         </div>

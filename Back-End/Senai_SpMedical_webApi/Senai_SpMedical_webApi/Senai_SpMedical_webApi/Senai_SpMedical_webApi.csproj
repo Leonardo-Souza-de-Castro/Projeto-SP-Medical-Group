@@ -26,4 +26,6 @@
 		<NoWarn>$(NoWarn);1591</NoWarn>
 	</PropertyGroup>
 
+	<ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="https://bitbucket.org/atlassianlabs/atlascode/raw/main/resources/schemas/pipelines-schema.json" /></VisualStudio></ProjectExtensions>
+
 </Project>
