@@ -32,11 +32,11 @@ namespace Senai_SpMedical_webApi.Contexts
             if (!optionsBuilder.IsConfigured)
             {
                 //optionsBuilder.UseSqlServer("Data Source=NOTE0113D3\\SQLEXPRESS; Initial Catalog=SP_Medical_Group; user id=sa; pwd=Senai@132;");
-                //optionsBuilder.UseSqlServer("Data Source=DESKTOP-R3SNJAL\\SQLEXPRESS; Initial Catalog=SP_Medical_Group; user id=sa; pwd=senai@132;");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-R3SNJAL\\SQLEXPRESS; Initial Catalog=SP_Medical_Group; user id=sa; pwd=senai@132;");
                 //optionsBuilder.UseSqlServer("Server = tcp:medical - group.database.windows.net,1433; Initial Catalog = SP_Medical_Group; Persist Security Info = False; User ID = leonardo; Password =guilherme/85; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;");
                 //optionsBuilder.UseSqlServer("Data Source=DESKTOP-R3SNJAL\\SQLEXPRESS; Initial Catalog=SP_Medical_Group; user id=sa; pwd=senai@132;");
                 //optionsBuilder.UseSqlServer("Data Source=NOTE0113F1\\SQLEXPRESS; Initial Catalog=SP_Medical_Group; user id=sa; pwd=Senai@132;");
-                optionsBuilder.UseSqlServer("Data Source=NOTE0113F1\\SQLEXPRESS; initial catalog=SP_Medical_Group; user Id=sa; pwd=Senai@132;");
+                //optionsBuilder.UseSqlServer("Data Source=NOTE0113F1\\SQLEXPRESS; initial catalog=SP_Medical_Group; user Id=sa; pwd=Senai@132;");
             }
         }
 

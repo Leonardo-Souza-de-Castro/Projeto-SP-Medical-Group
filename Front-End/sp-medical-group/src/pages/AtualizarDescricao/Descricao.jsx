@@ -20,7 +20,7 @@ export default class Descricao extends Component {
 
     buscarConsulta = () => {
         console.log(this.state.idConsulta)
-        axios('http://localhost:5000/api/Consulta/' + this.state.idConsulta, {
+        axios('http://192.168.15.6:5000/api/Consulta/' + this.state.idConsulta, {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -56,7 +56,7 @@ export default class Descricao extends Component {
     };
 
     atualizarDescricao = () => {
-        axios.put('http://localhost:5000/api/Consulta/' + this.state.idConsulta, this.state.descricao, {
+        axios.put('http://192.168.15.6:5000/api/Consulta/' + this.state.idConsulta, this.state.descricao, {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }.then((resposta) => {
