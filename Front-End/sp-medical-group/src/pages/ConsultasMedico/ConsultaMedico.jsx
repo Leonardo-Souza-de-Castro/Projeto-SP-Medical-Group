@@ -1,6 +1,6 @@
-import { useState, useEffect, useHistory } from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-regular-svg-icons'
@@ -11,7 +11,7 @@ import logo from '../../assets/img/Logo_vbranca.svg'
 export default function ConsultaMedico() {
     const [listaminhasconsultas, setListasminhasconsultas] = useState([]);
     function BuscarMeusEventos() {
-        axios('http://localhost:5000/api/Consulta/Medico', {
+        axios('http://192.168.3.115:5000/api/Consulta/Medico', {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }

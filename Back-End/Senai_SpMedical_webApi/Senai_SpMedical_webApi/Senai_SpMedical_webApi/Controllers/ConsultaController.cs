@@ -91,7 +91,7 @@ namespace Senai_SpMedical_webApi.Controllers
         /// </summary>
         /// <param name="ConsultaAtualizada">Dados Atualizados</param>
         /// <param name="id">Id da Consulta a ser atualizada</param>
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "1, 2")]
         [HttpPut("{id}")]
         public IActionResult Atualizar(Consulta ConsultaAtualizada, int id)
         {

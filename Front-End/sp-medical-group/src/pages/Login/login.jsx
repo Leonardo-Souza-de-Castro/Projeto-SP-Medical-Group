@@ -22,7 +22,7 @@ export default class Login extends Component {
         evento.preventDefault();
 
         this.setState({ mensagemErro: '', isLoading: true })
-        axios.post('http://localhost:5000/api/Login', {
+        axios.post('http://192.168.3.115:5000/api/Login', {
             email: this.state.email,
             senha: this.state.senha
         })

@@ -9,6 +9,7 @@ export default class Descricao extends Component {
             dataConsulta: new Date(),
             infoPaciente: {},
             infoStatus: {},
+            // descricaoAtualizada: {},
             idConsulta: props.location.state.id,
             descricao: ''
         }
@@ -20,7 +21,8 @@ export default class Descricao extends Component {
 
     buscarConsulta = () => {
         console.log(this.state.idConsulta)
-        axios('http://192.168.15.6:5000/api/Consulta/' + this.state.idConsulta, {
+
+        axios('http://192.168.3.115:5000/api/Consulta/' + this.state.idConsulta, {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -35,9 +37,11 @@ export default class Descricao extends Component {
                 this.setState({infoPaciente: this.state.consultabuscada.idProntuarioNavigation})
                 this.setState({infoStatus: this.state.consultabuscada.idStatusNavigation})
                 this.setState({dataConsulta: this.state.consultabuscada.dataConsulta})
-                // console.log(this.state.infoMedico)
-                // console.log(this.state.infoPaciente)
-                // console.log(this.state.infoStatus)
+                // this.setState({descricaoAtualizada: this.state.consultabuscada.descricao})
+                console.log(this.state.infoMedico)
+                console.log(this.state.infoPaciente)
+                console.log(this.state.infoStatus)
+                // console.log(this.state.descricaoAtualizada)
             })
             .catch(erro => console.log(erro));
 
@@ -55,21 +59,27 @@ export default class Descricao extends Component {
         //    })
     };
 
-    atualizarDescricao = () => {
-        axios.put('http://192.168.15.6:5000/api/Consulta/' + this.state.idConsulta, this.state.descricao, {
+    atualizarDescricao = (event) => {
+        event.preventDefault();
+
+        console.log(this.state.idConsulta)
+        console.log(this.state.descricao)
+        axios.put('http://192.168.3.115:5000/api/Consulta/' + this.state.idConsulta, {descricao: this.state.descricao}, {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-            }.then((resposta) => {
-                if (resposta.status === 200) {
-                    console.log('função funciona')
-                    // this.setState({ descricao: resposta.data })
-                }
-            }).catch(erro => console.log(erro))
+            }
         })
+        .then((resposta) => {
+            if (resposta.status === 204) {
+                console.log('função funciona')
+                // this.setState({ descricao: resposta.data })
+            }
+        }).catch(erro => console.log(erro))
     };
 
     componentDidMount() {
         this.buscarConsulta();
+        // console.log(this.state.idConsulta)
     }
 
     render() {
@@ -90,6 +100,7 @@ export default class Descricao extends Component {
                                             hour: 'numeric', minute: 'numeric',
                                             hour12: false
                                         }).format(new Date(this.state.dataConsulta))}</span>
+                                        <span>{this.state.consultabuscada.descricao}</span>
                                         <span className="dados-consulta">{this.state.infoPaciente.nome}</span>
                                     </div>
                                 </div>
