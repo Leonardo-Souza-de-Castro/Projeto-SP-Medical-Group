@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Senai_SpMedical_webApi.Domains;
 using Senai_SpMedical_webApi.Interfaces;
 using Senai_SpMedical_webApi.Repositories;
+using Senai_SpMedical_webApi.ViewModel;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
@@ -190,6 +191,27 @@ namespace Senai_SpMedical_webApi.Controllers
                 return BadRequest(new
                 {
                     mensagem = "É necessario estar logado para ver as suas consultas", ex
+                });
+            }
+        }
+
+        [Authorize(Roles = "2")]
+        [HttpPatch("Descricao/{id}")]
+        public IActionResult AtualizarDescricao(int id, DescricaoViewModel descricao)
+        {
+            try
+            {
+                _ConsultaRepository.AtualizarDescricao(id, descricao.descricao);
+
+                return StatusCode(200);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(new
+                {
+                    mensagem = "É necessario informar uma descrição",
+                    ex
                 });
             }
         }

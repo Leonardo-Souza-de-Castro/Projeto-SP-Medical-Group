@@ -12,6 +12,7 @@ namespace Senai_SpMedical_webApi.Domains
             Consulta = new HashSet<Consulta>();
         }
 
+        public int? IdUsuario { get; set; }
         public int IdProntuario { get; set; }
         public string Nome { get; set; }
         public string Rg { get; set; }
@@ -20,6 +21,7 @@ namespace Senai_SpMedical_webApi.Domains
         public string Telefone { get; set; }
         public string Endereco { get; set; }
 
+        public virtual Usuario IdUsuarioNavigation { get; set; }
         public virtual ICollection<Consulta> Consulta { get; set; }
     }
 }

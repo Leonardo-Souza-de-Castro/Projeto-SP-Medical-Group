@@ -64,15 +64,18 @@ export default class Descricao extends Component {
 
         console.log(this.state.idConsulta)
         console.log(this.state.descricao)
-        axios.put('http://192.168.3.115:5000/api/Consulta/' + this.state.idConsulta, {descricao: this.state.descricao}, {
+        const token = localStorage.getItem('usuario-login')
+        axios.patch('http://192.168.3.115:5000/api/Consulta/Descricao/' + this.state.idConsulta, 
+        {descricao: this.state.descricao}, {
             headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+                'Authorization': 'Bearer ' + token
             }
         })
         .then((resposta) => {
-            if (resposta.status === 204) {
+            if (resposta.status === 200) {
                 console.log('função funciona')
                 // this.setState({ descricao: resposta.data })
+                this.props.history.push('/consultasmedico')
             }
         }).catch(erro => console.log(erro))
     };
@@ -100,7 +103,7 @@ export default class Descricao extends Component {
                                             hour: 'numeric', minute: 'numeric',
                                             hour12: false
                                         }).format(new Date(this.state.dataConsulta))}</span>
-                                        <span>{this.state.consultabuscada.descricao}</span>
+                                        <span className="dados-consulta">Descrição: {this.state.consultabuscada.descricao}</span>
                                         <span className="dados-consulta">{this.state.infoPaciente.nome}</span>
                                     </div>
                                 </div>
@@ -121,11 +124,11 @@ export default class Descricao extends Component {
                     <section className="container-descricao">
                         <div className="box-info">
                             <h2>Nova Descrição:</h2>
-                            <form type='submit'>
+                            <form onSubmit={this.atualizarDescricao}>
                                 <textarea cols="20" rows="7" placeholder="Insira a descrição da consulta realizada aqui:"
                                     className="input-descricao" name="descricao" value={this.state.descricao} onChange={this.atualizaStateCampo}></textarea>
                                 <div className="box-botao">
-                                    <button className="botao-enviar" onClick={this.atualizarDescricao}>Enviar</button>
+                                    <button className="botao-enviar" type='submit'>Enviar</button>
                                 </div>
                             </form>
                         </div>

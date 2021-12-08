@@ -11,6 +11,13 @@ namespace Senai_SpMedical_webApi.Interfaces
         /// <param name="id">Id da consulta a ser atualizada</param>
         /// <param name="Status">Novo status da consulta</param>
         void AtualizarStatus(int id, string Status);
+        
+        /// <summary>
+        /// Métodod responsavel por atualizar as descrições da consulta
+        /// </summary>
+        /// <param name="id">Id da consulta a ser atualizada</param>
+        /// <param name="descricao">Nova descrição da consulta</param>
+        void AtualizarDescricao(int id, string descricao);
 
         /// <summary>
         /// Listar todas as Consultas

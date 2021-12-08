@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Senai_SpMedical_webApi.Contexts;
+using Senai_SpMedical_webApi.Context;
 using Senai_SpMedical_webApi.Domains;
 using Senai_SpMedical_webApi.Interfaces;
 using System.Collections.Generic;
@@ -96,6 +96,17 @@ namespace Senai_SpMedical_webApi.Repositories
         {
             //return ctx.Consulta.Include(c => c.IdMedicoNavigation.IdClinicaNavigation).ToList();
             return ctx.Consulta.Include(C => C.IdMedicoNavigation.IdEspecialidadeNavigation).Include(C => C.IdMedicoNavigation.IdClinicaNavigation).Include(C => C.IdProntuarioNavigation).Include(C => C.IdStatusNavigation).Where(P => P.IdProntuario == id).ToList();
+        }
+
+        public void AtualizarDescricao(int id, string descricao)
+        {
+            Consulta ConsultaBuscada = Buscar(id);
+
+            ConsultaBuscada.Descricao = descricao;
+
+            ctx.Consulta.Update(ConsultaBuscada);
+
+            ctx.SaveChanges();
         }
     }
 }

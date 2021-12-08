@@ -10,6 +10,14 @@ Nome_Tipo Varchar(20)
 );
 Go
 
+Create Table Usuario(
+Id_Usuario int Primary Key Identity,
+Id_Tipo Int Foreign Key References Tipo_Usuario(Id_Tipo),
+Email Varchar(250) Not Null Unique,
+Senha Varchar(15) Not Null
+);
+Go
+
 Create Table Clinica(
 Id_Clinica Int Primary Key Identity,
 Endereco Varchar(300) Not Null,
@@ -27,13 +35,18 @@ Nome_Especialidade Varchar(200) Not Null Unique,
 );
 Go
 
-Create Table Status_Consulta(
-Id_Status Int Primary Key Identity,
-Descricao Varchar(12) Not Null
+Create Table Medico(
+Id_Usuario Int Foreign Key References Usuario(Id_Usuario),
+Id_Medico Int Primary Key Identity,
+Id_Especialidade Int Foreign Key References Especialidade (Id_Especialidade),
+Id_Clinica Int Foreign Key References Clinica(Id_Clinica),
+Nome Varchar(150) Not Null,
+Crm Varchar(15) Not Null Unique,
 );
 Go
 
 Create Table Pacientes(
+Id_Usuario Int Foreign Key References Usuario(Id_Usuario),
 Id_Prontuario Int Primary Key Identity,
 Nome Varchar(500) Not Null,
 Rg Char(13) Not Null,
@@ -44,12 +57,9 @@ Endereco Varchar(300)
 );
 Go
 
-Create Table Medico(
-Id_Medico Int Primary Key Identity,
-Id_Especialidade Int Foreign Key References Especialidade (Id_Especialidade),
-Id_Clinica Int Foreign Key References Clinica(Id_Clinica),
-Nome Varchar(150) Not Null,
-Crm Varchar(15) Not Null Unique,
+Create Table Status_Consulta(
+Id_Status Int Primary Key Identity,
+Descricao Varchar(12) Not Null
 );
 Go
 
@@ -57,16 +67,8 @@ Create Table Consulta(
 Id_Consulta Int Primary Key Identity,
 Id_Prontuario Int Foreign Key References Pacientes (Id_Prontuario),
 Id_Medico Int Foreign Key References Medico (Id_Medico),
-Id_Status Int Foreign Key References Status_Consulta (Id_Status),
+Id_Status Int Foreign Key References Status_Consulta (Id_Status) Default (1),
 Data_Consulta Date Not Null,
 Descricao Varchar(250)
-);
-Go
-
-Create Table Usuario(
-Id_Usuario int Primary Key Identity,
-Id_Tipo Int Foreign Key References Tipo_Usuario(Id_Tipo),
-Email Varchar(250) Not Null Unique,
-Senha Varchar(15) Not Null
 );
 Go

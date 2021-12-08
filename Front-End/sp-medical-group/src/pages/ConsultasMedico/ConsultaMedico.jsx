@@ -47,6 +47,7 @@ export default function ConsultaMedico() {
                                                     hour: 'numeric', minute: 'numeric',
                                                     hour12: false
                                                 }).format(new Date(minhaConsulta.dataConsulta))}</span>
+                                                <span className="dados-consulta">Descrição: {minhaConsulta.descricao}</span>
                                                 <span className="dados-consulta">{minhaConsulta.idProntuarioNavigation.nome}</span>
                                             </div>
                                         </div>
