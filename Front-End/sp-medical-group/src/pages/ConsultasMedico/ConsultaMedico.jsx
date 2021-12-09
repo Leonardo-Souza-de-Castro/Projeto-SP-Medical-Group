@@ -3,10 +3,12 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit } from '@fortawesome/free-regular-svg-icons'
+import { faEdit} from '@fortawesome/free-regular-svg-icons'
 
 import imagem_banner from '../../assets/img/undraw_medicine_b1ol.svg'
 import logo from '../../assets/img/Logo_vbranca.svg'
+
+import Header from '../../components/header/header'
 
 export default function ConsultaMedico() {
     const [listaminhasconsultas, setListasminhasconsultas] = useState([]);
@@ -26,6 +28,7 @@ export default function ConsultaMedico() {
 
     return (
         <div>
+        <Header />
             <section className="container-banner">
                 <img src={imagem_banner} alt="Banner Principal" className="Imagem-Banner"/>
                 <img src={logo} alt="Logo Site" className="logo-banner" />

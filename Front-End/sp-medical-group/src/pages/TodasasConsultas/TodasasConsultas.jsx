@@ -4,6 +4,8 @@ import axios from 'axios'
 import imagem_banner from '../../assets/img/undraw_Browsing_online_re_umsa 1.svg'
 import logo from '../../assets/img/Logo_vbranca.svg'
 
+import Header from '../../components/header/header'
+
 export default function ConsultaPaciente() {
     const [listatodasconsultas, setListastodasconsultas] = useState([]);
 
@@ -23,6 +25,7 @@ export default function ConsultaPaciente() {
 
     return (
         <div>
+            <Header/>
             <section class="container-banner">
                 <img src={imagem_banner} alt="Banner Principal" className="Img_banner"/>
                 <img src={logo} alt="Logo Site" class="logo-banner" />

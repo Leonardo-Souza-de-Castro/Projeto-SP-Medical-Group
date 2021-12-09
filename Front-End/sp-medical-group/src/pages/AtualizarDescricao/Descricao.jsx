@@ -1,6 +1,8 @@
 import { Component } from "react";
 import axios from 'axios';
 
+import Header from '../../components/header/header'
+
 export default class Descricao extends Component {
     constructor(props) {
         super(props)
@@ -33,10 +35,10 @@ export default class Descricao extends Component {
                     console.log('Pra cima deles')
                     this.setState({ consultabuscada: resposta.data })
                 };
-                this.setState({infoMedico: this.state.consultabuscada.idMedicoNavigation})
-                this.setState({infoPaciente: this.state.consultabuscada.idProntuarioNavigation})
-                this.setState({infoStatus: this.state.consultabuscada.idStatusNavigation})
-                this.setState({dataConsulta: this.state.consultabuscada.dataConsulta})
+                this.setState({ infoMedico: this.state.consultabuscada.idMedicoNavigation })
+                this.setState({ infoPaciente: this.state.consultabuscada.idProntuarioNavigation })
+                this.setState({ infoStatus: this.state.consultabuscada.idStatusNavigation })
+                this.setState({ dataConsulta: this.state.consultabuscada.dataConsulta })
                 // this.setState({descricaoAtualizada: this.state.consultabuscada.descricao})
                 console.log(this.state.infoMedico)
                 console.log(this.state.infoPaciente)
@@ -65,19 +67,19 @@ export default class Descricao extends Component {
         console.log(this.state.idConsulta)
         console.log(this.state.descricao)
         const token = localStorage.getItem('usuario-login')
-        axios.patch('http://192.168.6.31:5000/api/Consulta/Descricao/' + this.state.idConsulta, 
-        {descricao: this.state.descricao}, {
+        axios.patch('http://192.168.6.31:5000/api/Consulta/Descricao/' + this.state.idConsulta,
+            { descricao: this.state.descricao }, {
             headers: {
                 'Authorization': 'Bearer ' + token
             }
         })
-        .then((resposta) => {
-            if (resposta.status === 200) {
-                console.log('função funciona')
-                // this.setState({ descricao: resposta.data })
-                this.props.history.push('/consultasmedico')
-            }
-        }).catch(erro => console.log(erro))
+            .then((resposta) => {
+                if (resposta.status === 200) {
+                    console.log('função funciona')
+                    // this.setState({ descricao: resposta.data })
+                    this.props.history.push('/consultasmedico')
+                }
+            }).catch(erro => console.log(erro))
     };
 
     componentDidMount() {
@@ -89,6 +91,7 @@ export default class Descricao extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <main className="container">
                     <h1 className="titulo">Descrição da Consulta</h1>
 
@@ -113,7 +116,7 @@ export default class Descricao extends Component {
                                     {
                                         (this.state.infoStatus.idStatus === 1 ? <hr className="divisoria" /> :
 
-                                        this.state.infoStatus.idStatus === 2 ? <hr className="divisoria-vermelha" />
+                                            this.state.infoStatus.idStatus === 2 ? <hr className="divisoria-vermelha" />
 
                                                 : <hr className="divisoria-amarela" />)
                                     }

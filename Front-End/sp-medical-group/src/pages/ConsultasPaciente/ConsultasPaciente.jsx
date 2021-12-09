@@ -7,9 +7,11 @@ import imagem_banner from '../../assets/img/undraw_doctor_kw5l.svg'
 import logo from '../../assets/img/Logo_vbranca.svg'
 import mapa from '../../assets/img/Group 1.png'
 
+import Header from '../../components/header/header'
+
 export default function ConsultaPaciente() {
     const [listaminhasconsultas, setListasminhasconsultas] = useState([]);
-    
+
     function BuscarMeusEventos() {
         axios('http://192.168.3.115:5000/api/Consulta/Paciente', {
             headers: {
@@ -26,8 +28,9 @@ export default function ConsultaPaciente() {
 
     return (
         <div>
+            <Header />
             <section className="container-banner">
-                <img src={imagem_banner} alt="Banner Principal" className="Imagem-Banner-paciente"/>
+                <img src={imagem_banner} alt="Banner Principal" className="Imagem-Banner-paciente" />
                 <img src={logo} alt="Logo Site" className="logo-banner" />
             </section>
             <section className="container-consultas">

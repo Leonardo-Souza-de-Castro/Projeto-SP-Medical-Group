@@ -1,6 +1,9 @@
 import { Component } from 'react';
 import axios from 'axios';
 
+import Header from '../../components/header/header'
+
+
 import '../../assets/css/style.css';
 
 export default class Cadastrar extends Component {
@@ -108,6 +111,8 @@ export default class Cadastrar extends Component {
     render() {
         return (
             <div>
+                <Header />
+
                 <main>
                     <section className="container-formulario">
                         <h1>Cadastro de Consulta</h1>
