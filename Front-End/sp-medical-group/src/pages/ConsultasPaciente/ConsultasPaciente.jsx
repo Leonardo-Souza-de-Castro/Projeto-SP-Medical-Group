@@ -27,7 +27,7 @@ export default function ConsultaPaciente() {
     return (
         <div>
             <section className="container-banner">
-                <img src={imagem_banner} alt="Banner Principal" />
+                <img src={imagem_banner} alt="Banner Principal" className="Imagem-Banner-paciente"/>
                 <img src={logo} alt="Logo Site" className="logo-banner" />
             </section>
             <section className="container-consultas">
@@ -57,7 +57,7 @@ export default function ConsultaPaciente() {
                                         </div>
                                     </div>
                                     <div className="box-status">
-                                        <span>{minhaConsulta.idStatusNavigation.descricao}</span>
+                                        <span className="info_status">{minhaConsulta.idStatusNavigation.descricao}</span>
 
                                         {
                                             (minhaConsulta.idStatus === 1 ? <hr className="divisoria" /> :

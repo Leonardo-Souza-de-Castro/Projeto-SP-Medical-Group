@@ -1,10 +1,6 @@
 Use SP_Medical_Group;
 Go
 
-Insert Into Usuario(Email,Senha,Id_Tipo)
-Values('adm@adm.com', 'adm123', 1), ('med@med.com', 'med123', 2), ('paci@paci.com', 'pac123', 3);
-Go
-
 Select * From Clinica
 Select * From Usuario
 Select * From Consulta

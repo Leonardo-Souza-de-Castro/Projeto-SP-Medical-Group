@@ -11,7 +11,7 @@ import logo from '../../assets/img/Logo_vbranca.svg'
 export default function ConsultaMedico() {
     const [listaminhasconsultas, setListasminhasconsultas] = useState([]);
     function BuscarMeusEventos() {
-        axios('http://192.168.3.115:5000/api/Consulta/Medico', {
+        axios('http://192.168.6.31:5000/api/Consulta/Medico', {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -27,7 +27,7 @@ export default function ConsultaMedico() {
     return (
         <div>
             <section className="container-banner">
-                <img src={imagem_banner} alt="Banner Principal" />
+                <img src={imagem_banner} alt="Banner Principal" className="Imagem-Banner"/>
                 <img src={logo} alt="Logo Site" className="logo-banner" />
             </section>
             <section className="container-consultas">
@@ -53,7 +53,7 @@ export default function ConsultaMedico() {
                                         </div>
                                         <div className="box-opcoes">
                                             <div className="box-status reduz-espacamento">
-                                                <span>{minhaConsulta.idStatusNavigation.descricao}</span>
+                                                <span className="info_status">{minhaConsulta.idStatusNavigation.descricao}</span>
                                                 {
                                                     (minhaConsulta.idStatus === 1 ? <hr className="divisoria" /> :
 

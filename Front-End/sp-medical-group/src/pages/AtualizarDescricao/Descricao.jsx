@@ -22,7 +22,7 @@ export default class Descricao extends Component {
     buscarConsulta = () => {
         console.log(this.state.idConsulta)
 
-        axios('http://192.168.3.115:5000/api/Consulta/' + this.state.idConsulta, {
+        axios('http://192.168.6.31:5000/api/Consulta/' + this.state.idConsulta, {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -65,7 +65,7 @@ export default class Descricao extends Component {
         console.log(this.state.idConsulta)
         console.log(this.state.descricao)
         const token = localStorage.getItem('usuario-login')
-        axios.patch('http://192.168.3.115:5000/api/Consulta/Descricao/' + this.state.idConsulta, 
+        axios.patch('http://192.168.6.31:5000/api/Consulta/Descricao/' + this.state.idConsulta, 
         {descricao: this.state.descricao}, {
             headers: {
                 'Authorization': 'Bearer ' + token
@@ -81,6 +81,7 @@ export default class Descricao extends Component {
     };
 
     componentDidMount() {
+        console.log(this.state.infoStatus)
         this.buscarConsulta();
         // console.log(this.state.idConsulta)
     }
@@ -108,7 +109,7 @@ export default class Descricao extends Component {
                                     </div>
                                 </div>
                                 <div className="box-status">
-                                    <span>{this.state.infoStatus.descricao}</span>
+                                    <span className="info_status">{this.state.infoStatus.descricao}</span>
                                     {
                                         (this.state.infoStatus.idStatus === 1 ? <hr className="divisoria" /> :
 

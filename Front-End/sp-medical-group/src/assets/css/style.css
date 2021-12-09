@@ -257,3 +257,63 @@
 .Entrando:hover{
     cursor: pointer;
 }
+
+.Imagem-Banner-paciente{
+    width: 50%;
+}
+
+.Imagem-Banner{
+    width: 50%;
+}
+
+.logo-banner{
+    width: 50%;
+}
+
+/* Responsivo das Paginas */
+
+@media(max-width: 1367px){
+    .Imagem-Banner{
+        width: 36%;
+    }
+
+    .logo-banner{
+        width: 40%;
+    }
+
+    .container-consultas h1{
+        font-size: 50px;
+    }
+
+    .container-banner{
+        height: 590px;
+    }
+
+    .Imagem-Banner-paciente{
+        width: 50%;
+    }
+
+    .Img_banner{
+        width: 50%;
+    }
+
+    .container-formulario h1{
+        font-size: 56px;
+    }
+
+    .foto-perfil{
+        width: 240px;
+    }
+
+    .dados-consulta{
+        font-size: 20px;
+    }
+
+    .titulo{
+        font-size: 56px;
+    }
+
+    .info_status{
+        font-size: 25px;
+    }
+}
