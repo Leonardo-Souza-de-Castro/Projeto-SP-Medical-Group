@@ -89,13 +89,13 @@ namespace Senai_SpMedical_webApi.Repositories
 
         public List<Consulta> ListarSomenteMedico(int id)
         {
-            return ctx.Consulta.Include(C => C.IdMedicoNavigation).Include(C => C.IdProntuarioNavigation).Include(C => C.IdStatusNavigation).Where(M => M.IdMedico == id).ToList();
+            return ctx.Consulta.Include(C => C.IdMedicoNavigation).Include(C => C.IdProntuarioNavigation).Include(C => C.IdStatusNavigation).Where(M => M.IdMedicoNavigation.IdUsuario == id).ToList();
         }
 
         public List<Consulta> ListarSomentePaciente(int id)
         {
             //return ctx.Consulta.Include(c => c.IdMedicoNavigation.IdClinicaNavigation).ToList();
-            return ctx.Consulta.Include(C => C.IdMedicoNavigation.IdEspecialidadeNavigation).Include(C => C.IdMedicoNavigation.IdClinicaNavigation).Include(C => C.IdProntuarioNavigation).Include(C => C.IdStatusNavigation).Where(P => P.IdProntuario == id).ToList();
+            return ctx.Consulta.Include(C => C.IdMedicoNavigation.IdEspecialidadeNavigation).Include(C => C.IdMedicoNavigation.IdClinicaNavigation).Include(C => C.IdProntuarioNavigation).Include(C => C.IdStatusNavigation).Where(P => P.IdProntuarioNavigation.IdUsuario == id).ToList();
         }
 
         public void AtualizarDescricao(int id, string descricao)

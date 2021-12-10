@@ -270,6 +270,10 @@
     width: 50%;
 }
 
+.Img_banner{
+    width: 50%;
+}
+
 /* Responsivo das Paginas */
 
 @media(max-width: 1367px){

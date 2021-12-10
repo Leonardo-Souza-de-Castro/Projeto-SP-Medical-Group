@@ -13,7 +13,7 @@ import Header from '../../components/header/header'
 export default function ConsultaMedico() {
     const [listaminhasconsultas, setListasminhasconsultas] = useState([]);
     function BuscarMeusEventos() {
-        axios('http://192.168.6.31:5000/api/Consulta/Medico', {
+        axios('http://192.168.3.115:5000/api/Consulta/Medico', {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -41,7 +41,7 @@ export default function ConsultaMedico() {
                         return (
                             <div className='div-container' key={minhaConsulta.idConsulta}>
                                 <section className="container-consulta">
-                                    <div className="box-total">
+                                    <div className="box-total" >
                                         <div className="box-paciente">
                                             <img src="../assets/user 1.png" alt="Foto do Usuario" className="foto-perfil" />
                                             <div className="box-info-paciente">

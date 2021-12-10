@@ -24,7 +24,7 @@ export default class Cadastrar extends Component {
     }
 
     buscarPacientes = () => {
-        axios('http://localhost:5000/api/Paciente', {
+        axios('http://192.168.3.115:5000/api/Paciente', {
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -37,7 +37,7 @@ export default class Cadastrar extends Component {
     }
 
     buscarMedico = () => {
-        axios('http://localhost:5000/api/Medico', {
+        axios('http://192.168.3.115:5000/api/Medico', {
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -50,7 +50,7 @@ export default class Cadastrar extends Component {
     }
 
     buscarClinica = () => {
-        axios('http://localhost:5000/api/Clinica', {
+        axios('http://192.168.3.115:5000/api/Clinica', {
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -76,7 +76,7 @@ export default class Cadastrar extends Component {
             idStatus: this.state.idStatus
         }
         this.setState({ isLoading: true })
-        axios.post('http://localhost:5000/api/Consulta', consulta, {
+        axios.post('http://192.168.3.115:5000/api/Consulta', consulta, {
             headers: {
                 Authorization: 'Bearer ' + localStorage.getItem('usuario-login'),
             },

@@ -10,7 +10,7 @@ export default function ConsultaPaciente() {
     const [listatodasconsultas, setListastodasconsultas] = useState([]);
 
     function BuscarMeusEventos() {
-        axios('http://localhost:5000/api/Consulta/', {
+        axios('http://192.168.3.115:5000/api/Consulta/', {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -26,22 +26,22 @@ export default function ConsultaPaciente() {
     return (
         <div>
             <Header/>
-            <section class="container-banner">
+            <section className="container-banner">
                 <img src={imagem_banner} alt="Banner Principal" className="Img_banner"/>
-                <img src={logo} alt="Logo Site" class="logo-banner" />
+                <img src={logo} alt="Logo Site" className="logo-banner" />
             </section>
-            <section class="container-consultas">
+            <section className="container-consultas">
                 <h1>Todas as Consultas</h1>
                 {
                     listatodasconsultas.map((minhaConsulta) => {
                         console.log(minhaConsulta)
                         return (
-                            <div className='div-container'>
-                                <section class="container-consulta">
-                                    <div class="box-total">
-                                        <div class="box-paciente">
-                                            <img src="../assets/user 1.png" alt="Foto do Usuario" class="foto-perfil" />
-                                            <div class="box-info-paciente">
+                            <div className='div-container' key={minhaConsulta.idConsulta}>
+                                <section className="container-consulta">
+                                    <div className="box-total" >
+                                        <div className="box-paciente">
+                                            <img src="../assets/user 1.png" alt="Foto do Usuario" className="foto-perfil" />
+                                            <div className="box-info-paciente">
                                                 <span className="dados-consulta">{Intl.DateTimeFormat("pt-BR", {
                                                     year: 'numeric', month: 'numeric', day: 'numeric',
                                                     hour: 'numeric', minute: 'numeric',
@@ -51,8 +51,8 @@ export default function ConsultaPaciente() {
                                                 <span className="dados-consulta">{minhaConsulta.idMedicoNavigation.nome} / {minhaConsulta.idMedicoNavigation.idEspecialidadeNavigation.nomeEspecialidade}</span>
                                             </div>
                                         </div>
-                                        <div class="box-opcoes">
-                                            <div class="box-status reduz-espacamento">
+                                        <div className="box-opcoes">
+                                            <div className="box-status reduz-espacamento">
                                                 <span className="info_status">{minhaConsulta.idStatusNavigation.descricao}</span>
                                                 {
                                                     (minhaConsulta.idStatus === 1 ? <hr className="divisoria" /> :
@@ -62,7 +62,7 @@ export default function ConsultaPaciente() {
                                                             : <hr className="divisoria-amarela" />)
                                                 }
                                             </div>
-                                            <div class="box-alterar-descricao">
+                                            <div className="box-alterar-descricao">
                                                 {/* <a href="Descricao.html"><img src="../assets/ferramenta-lapis 4.png" alt="Icone de Edição"></a> <!-- Transformar essa imagem em icone depois --> */}
                                             </div>
                                         </div>

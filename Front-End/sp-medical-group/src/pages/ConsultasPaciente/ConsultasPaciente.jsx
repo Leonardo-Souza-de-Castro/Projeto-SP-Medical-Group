@@ -45,8 +45,8 @@ export default function ConsultaPaciente() {
                         // teste(minhaConsulta)
 
                         return (
-                            <section className="container-consulta">
-                                <div className="box-total">
+                            <section className="container-consulta" key={minhaConsulta.idConsulta}>
+                                <div className="box-total" >
                                     <div className="box-paciente">
                                         <img src={mapa} alt="Local da Consulta" className="local-consulta" />
                                         <div className="box-info-paciente">

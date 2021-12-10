@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import LinearGradient from 'react-native-linear-gradient';
 
+import jwtDecode from 'jwt-decode';
 
 import {
     View,
@@ -17,12 +18,29 @@ export default class Consultas extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            MinhasConsultas: []
+            MinhasConsultas: [],
+            Tipo_Usuario: 0
+        }
+    }
+
+    SetarUsuario = async () => {
+        const token = await AsyncStorage.getItem('userToken')
+
+        await this.setState({ Tipo_Usuario: jwtDecode(token).role })
+        // console.warn(this.state.Tipo_Usuario)
+
+        if (this.state.Tipo_Usuario == 3) {
+            this.BuscarminhasPaciente()
+        }else{
+            this.Buscarminhas()
         }
     }
 
     Buscarminhas = async () => {
+        // this.setState({ Tipo_Usuario: jwtDecode(token).role })
+        // console.warn(this.state.Tipo_Usuario)
         const token = await AsyncStorage.getItem('userToken')
+
 
         const resposta = await api.get('/Consulta/Medico', {
             headers: {
@@ -38,8 +56,26 @@ export default class Consultas extends Component {
 
     }
 
+    BuscarminhasPaciente = async () => {
+        const token = await AsyncStorage.getItem('userToken')
+
+
+        const resposta = await api.get('/Consulta/Paciente', {
+            headers: {
+                Authorization: 'Bearer ' + token,
+            }
+        })
+        if (resposta.status == 200) {
+            // console.warn('teste')
+            const dadosDaApi = resposta.data;
+            // console.warn(resposta.data)
+            this.setState({ MinhasConsultas: dadosDaApi })
+        }
+
+    }
+
     componentDidMount() {
-        this.Buscarminhas()
+        this.SetarUsuario()
     }
 
     render() {
@@ -47,13 +83,20 @@ export default class Consultas extends Component {
             <LinearGradient colors={['#9F90E5', '#669AFA']} style={styles.Fundo}>
                 <View style={styles.Container}>
                     <Text style={styles.Titulo}>Minhas Consultas</Text>
-
-                    <FlatList
-                        contentContainerStyle={styles.mainBodyContent}
-                        data={this.state.MinhasConsultas}
-                        keyExtractor={item => item.idConsulta}
-                        renderItem={this.renderItem}
-                    />
+                    {(this.state.Tipo_Usuario == 3 ?
+                        <FlatList
+                            contentContainerStyle={styles.mainBodyContent}
+                            data={this.state.MinhasConsultas}
+                            keyExtractor={item => item.idConsulta}
+                            renderItem={this.renderItemPaciente}
+                        /> :
+                        <FlatList
+                            contentContainerStyle={styles.mainBodyContent}
+                            data={this.state.MinhasConsultas}
+                            keyExtractor={item => item.idConsulta}
+                            renderItem={this.renderItem}
+                        />
+                    )}
                 </View>
             </LinearGradient>
         )
@@ -63,16 +106,51 @@ export default class Consultas extends Component {
         <View style={styles.box_conteudo}>
             <View style={styles.box_info}>
                 <Text style={styles.info}>{Intl.DateTimeFormat("pt-BR", {
-                                year: 'numeric', month: 'numeric', day: 'numeric',
-                                hour: 'numeric', minute: 'numeric',
-                                hour12: true                                                
-                            }).format(new Date(item.dataConsulta))}</Text>
+                    year: 'numeric', month: 'numeric', day: 'numeric',
+                    hour: 'numeric', minute: 'numeric',
+                    hour12: true
+                }).format(new Date(item.dataConsulta))}</Text>
                 <Text style={styles.info}>{item.idProntuarioNavigation.nome}</Text>
             </View>
+            {
+                (item.idStatus === 1 ? <View style={styles.status_verde}>
+                    <Text style={styles.info}>{item.idStatusNavigation.descricao}</Text>
+                </View> :
 
-            <View style={styles.status_verde}>
-                <Text style={styles.info}>{item.idStatusNavigation.descricao}</Text>
+                    item.idStatus === 2 ? <View style={styles.status_vermelho}>
+                        <Text style={styles.info}>{item.idStatusNavigation.descricao}</Text>
+                    </View>
+
+                        : <View style={styles.status_amarelo}>
+                            <Text style={styles.info}>{item.idStatusNavigation.descricao}</Text>
+                        </View>)
+            }
+        </View>
+    )
+
+    renderItemPaciente = ({ item }) => (
+        <View style={styles.box_conteudo}>
+            <View style={styles.box_info}>
+                <Text style={styles.info}>{Intl.DateTimeFormat("pt-BR", {
+                    year: 'numeric', month: 'numeric', day: 'numeric',
+                    hour: 'numeric', minute: 'numeric',
+                    hour12: true
+                }).format(new Date(item.dataConsulta))}</Text>
+                <Text style={styles.info}>{item.idMedicoNavigation.nome}</Text>
             </View>
+            {
+                (item.idStatus === 1 ? <View style={styles.status_verde}>
+                    <Text style={styles.info}>{item.idStatusNavigation.descricao}</Text>
+                </View> :
+
+                    item.idStatus === 2 ? <View style={styles.status_vermelho}>
+                        <Text style={styles.info}>{item.idStatusNavigation.descricao}</Text>
+                    </View>
+
+                        : <View style={styles.status_amarelo}>
+                            <Text style={styles.info}>{item.idStatusNavigation.descricao}</Text>
+                        </View>)
+            }
         </View>
     )
 }
