@@ -74,6 +74,10 @@ header {
     font-size: 25px;
 }
 
+.btn_listar:hover{
+    cursor: pointer;
+}
+
 @media(max-width:1366px) {
     #menu {
         left: 175px;

@@ -2,6 +2,7 @@ import { Component } from "react";
 import axios from 'axios';
 
 import Header from '../../components/header/header'
+import foto_perfil from '../../assets/img/user 1.png'
 
 export default class Descricao extends Component {
     constructor(props) {
@@ -99,7 +100,7 @@ export default class Descricao extends Component {
                         <section className="container-consulta">
                             <div className="box-total">
                                 <div className="box-paciente">
-                                    <img src="../assets/user 1.png" alt="Foto do Usuario" className="foto-perfil" />
+                                    <img src={foto_perfil} alt="Foto do Usuario" className="foto-perfil" />
                                     <div className="box-info-paciente">
                                         <span className="dados-consulta">{Intl.DateTimeFormat(
                                             "pt-BR", {

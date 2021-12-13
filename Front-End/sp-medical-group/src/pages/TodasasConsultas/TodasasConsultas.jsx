@@ -3,6 +3,7 @@ import axios from 'axios'
 
 import imagem_banner from '../../assets/img/undraw_Browsing_online_re_umsa 1.svg'
 import logo from '../../assets/img/Logo_vbranca.svg'
+import foto_perfil from '../../assets/img/user 1.png'
 
 import Header from '../../components/header/header'
 
@@ -40,7 +41,7 @@ export default function ConsultaPaciente() {
                                 <section className="container-consulta">
                                     <div className="box-total" >
                                         <div className="box-paciente">
-                                            <img src="../assets/user 1.png" alt="Foto do Usuario" className="foto-perfil" />
+                                            <img src={foto_perfil} alt="Foto do Usuario" className="foto-perfil" />
                                             <div className="box-info-paciente">
                                                 <span className="dados-consulta">{Intl.DateTimeFormat("pt-BR", {
                                                     year: 'numeric', month: 'numeric', day: 'numeric',

@@ -15,44 +15,48 @@ export default class Header extends Component {
         nav.classList.toggle('active');
     }
 
-    listar = () => { 
-        
+    deslogar = () =>{
+        localStorage.removeItem('usuario-login')
+    }
+
+    listar = () => {
+
         console.log("logou")
 
 
-if(parsejwt() != null){
+        if (parsejwt() != null) {
 
 
 
-    switch (parsejwt().role) {
-        case '3':
-            // verifica se o usuário logado é do tipo paciente
-            window.location.href = "/consultaspaciente"
-            console.log('estou logado: ' + UsuarioAutenticado())
-            
-            break;
-            case '1':
-                // verifica se o usuário logado é do tipo administrador
-                window.location.href = "/todasasconsultas"
-            console.log('estou logado: ' + UsuarioAutenticado())
+            switch (parsejwt().role) {
+                case '3':
+                    // verifica se o usuário logado é do tipo paciente
+                    window.location.href = "/consultaspaciente"
+                    console.log('estou logado: ' + UsuarioAutenticado())
 
-            break;
-        case '2':
-            // verifica se o usuário logado é do tipo médico
-            window.location.href = "/consultasmedico"
-            console.log('estou logado: ' + UsuarioAutenticado())
-            break;
-        default:
-            window.location.href = "/login"
-            console.log('estou logado: ' + UsuarioAutenticado())
-            break;
-    }
+                    break;
+                case '1':
+                    // verifica se o usuário logado é do tipo administrador
+                    window.location.href = "/todasasconsultas"
+                    console.log('estou logado: ' + UsuarioAutenticado())
 
-}else{
-    alert("Usuario nao está logado.")
-}
+                    break;
+                case '2':
+                    // verifica se o usuário logado é do tipo médico
+                    window.location.href = "/consultasmedico"
+                    console.log('estou logado: ' + UsuarioAutenticado())
+                    break;
+                default:
+                    window.location.href = "/login"
+                    console.log('estou logado: ' + UsuarioAutenticado())
+                    break;
+            }
 
-       
+        } else {
+            alert("Usuario nao está logado.")
+        }
+
+
     }
 
     render() {
@@ -64,12 +68,20 @@ if(parsejwt() != null){
                         <img className="menu-hamb" src={Menu} alt="Menu Hamburguer" />
                     </button>
                     <nav id="nav">
-                        <ul id="menu">
-                            {/* <Link to="/">Home</Link> */}
-                            <Link to="/cadastrar">Cadastrar</Link>
-                            <button onClick={() => this.listar()}>Listar</button>   
-                            
-                        </ul>
+                        {(parsejwt().role == 1 ?
+                            <ul id="menu">
+                                {/* <Link to="/">Home</Link> */}
+                                <Link to="/cadastrar">Cadastrar</Link>
+                                <button className="btn_listar" onClick={() => this.listar()}>Listar</button>
+
+                            </ul> :  
+                            <ul id="menu">
+                                {/* <Link to="/">Home</Link> */}
+                                <Link to="/" onClick={() => this.deslogar()}>Sair</Link>
+                                <button className="btn_listar" onClick={() => this.listar()}>Listar</button>
+
+                            </ul>)}
+
 
                     </nav>
                     <Link to="/"><img className="logo" src={Logo} alt="Logo completo" /></Link>
