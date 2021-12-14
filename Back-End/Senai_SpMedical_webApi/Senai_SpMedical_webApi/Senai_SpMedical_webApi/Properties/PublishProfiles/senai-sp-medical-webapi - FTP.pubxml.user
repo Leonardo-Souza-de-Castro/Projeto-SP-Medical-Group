@@ -7,5 +7,6 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAD76JAKfB00SFDFqvtr5ClwAAAAACAAAAAAAQZgAAAAEAACAAAAC1lFN9eVAEtC+5Y1MfpDT64XPD/4U3my+A55y/KXEqWAAAAAAOgAAAAAIAACAAAAAi8UMJQJCRW6if+G0RswDiORc4ktRzHBXEag7BdM58xYAAAABje8U//7LedHXfNct7uGufVryvBrPIN0/Nbb1wNis992TdXtikeRiHz5bqxog1HC44DdHN/Ubgv+H+vPufaeR5sjZ0GsDI3x97nt+BGKtjiL3ZlD0z3L5CDi6E9ZmRmRTR8jKODoCri+vWZco5t3HrcBzQuWhejuLV8atrt2nk5EAAAAAbukOEYZRAoo1o91janmmScTUYsy1qTmZwkqN2YFA9VkVhh/9eZDz1lZRMZKl5l6nPsBV0+N0AL2+7ipFahmKc</EncryptedPassword>
+    <_PublishTargetUrl>ftp://waws-prod-cq1-031.ftp.azurewebsites.windows.net/site/wwwroot</_PublishTargetUrl>
   </PropertyGroup>
 </Project>

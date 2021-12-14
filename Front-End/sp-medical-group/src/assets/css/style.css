@@ -274,6 +274,11 @@
     width: 50%;
 }
 
+/* Pagina de Mapas */
+#map{
+    height: 100%;
+}
+
 /* Responsivo das Paginas */
 
 @media(max-width: 1367px){

@@ -21,6 +21,7 @@ import TodasasConsultas from './pages/TodasasConsultas/TodasasConsultas';
 import Cadastrar from './pages/CadastrarConsultas/Cadastrar';
 import NotFound from './pages/notFound/notFound';
 import AtualizarDescricao from './pages/AtualizarDescricao/Descricao.jsx';
+import Localizacao from './pages/Localizacao/Localizacao';
 
 const routing = (
   <Router>
@@ -33,6 +34,7 @@ const routing = (
         <Route path="/todasasconsultas" component={TodasasConsultas} /> {/* Todas as Consultas */}
         <Route path="/cadastrar" component={Cadastrar} /> {/* Cadastrar Consulta */}
         <Route path="/atualizar" component={AtualizarDescricao} /> {/* Cadastrar Consulta */}
+        <Route path="/mapa" component={Localizacao} /> {/* Cadastrar Consulta */}
         <Route path="/notFound" component={NotFound} /> {/* Not Found */}
         <Redirect to="/notFound" />
       </Switch>

@@ -72,6 +72,7 @@ export default class Header extends Component {
                             <ul id="menu">
                                 {/* <Link to="/">Home</Link> */}
                                 <Link to="/cadastrar">Cadastrar</Link>
+                                <Link to="/mapa">Localização</Link>
                                 <button className="btn_listar" onClick={() => this.listar()}>Listar</button>
 
                             </ul> :  
