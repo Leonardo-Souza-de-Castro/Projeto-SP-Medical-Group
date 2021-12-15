@@ -34,7 +34,7 @@ const routing = (
         <Route path="/todasasconsultas" component={TodasasConsultas} /> {/* Todas as Consultas */}
         <Route path="/cadastrar" component={Cadastrar} /> {/* Cadastrar Consulta */}
         <Route path="/atualizar" component={AtualizarDescricao} /> {/* Cadastrar Consulta */}
-        <Route path="/mapa" component={Localizacao} /> {/* Cadastrar Consulta */}
+        <Route path="/mapa" component={Localizacao} />
         <Route path="/notFound" component={NotFound} /> {/* Not Found */}
         <Redirect to="/notFound" />
       </Switch>
