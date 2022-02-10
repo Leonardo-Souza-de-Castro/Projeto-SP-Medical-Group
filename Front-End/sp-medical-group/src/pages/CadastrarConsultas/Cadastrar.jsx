@@ -13,7 +13,7 @@ export default class Cadastrar extends Component {
             idProntuario: 0,
             idMedico: 0,
             idStatus: 3,
-            idClinica: 0,
+            // idClinica: 0,
             dataConsulta: new Date(),
 
             listaPacientes: [],
@@ -22,6 +22,18 @@ export default class Cadastrar extends Component {
             isLoading: false
         }
     }
+
+    // BuscarMeusEventos() {
+    //     axios('https://6205069a161670001741b35f.mockapi.io/Consulta', {
+
+    //     }).then((resposta) => {
+    //         if (resposta.status === 200) {
+    //             console.log(resposta.data)
+    //             setListastodasconsultas(resposta.data)
+    //         }
+    //     }).catch(erro => console.log(erro))
+    // }
+    // useEffect(BuscarMeusEventos, [])
 
     buscarPacientes = () => {
         axios('http://192.168.3.115:5000/api/Paciente', {
@@ -71,7 +83,7 @@ export default class Cadastrar extends Component {
         let consulta = {
             idProntuario: this.state.idProntuario,
             idMedico: this.state.idMedico,
-            idClinica: this.state.idClinica,
+            // idClinica: this.state.idClinica,
             dataConsulta: this.state.dataConsulta,
             idStatus: this.state.idStatus
         }
@@ -89,7 +101,7 @@ export default class Cadastrar extends Component {
                         idProntuario: 0,
                         idMedico: 0,
                         idStatus: 3,
-                        idClinica: 0,
+                        // idClinica: 0,
                         dataConsulta: new Date()
                     })
                 }
@@ -144,7 +156,7 @@ export default class Cadastrar extends Component {
                                     );
                                 })}
                             </select>
-                            <select name="idClinica" value={this.state.idClinica} onChange={this.atualizaStateCampo}>
+                            {/* <select name="idClinica" value={this.state.idClinica} onChange={this.atualizaStateCampo}>
                                 <option value="0" selected disabled>
                                     Selecione a Clinica
                                 </option>
@@ -156,7 +168,7 @@ export default class Cadastrar extends Component {
                                         </option>
                                     );
                                 })}
-                            </select>
+                            </select> */}
                             {
                                 this.state.isLoading === true ? <button disabled>Cadastrando...</button> : <button className="Entrando">Cadastrar</button>
                             }

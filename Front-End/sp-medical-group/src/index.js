@@ -28,7 +28,8 @@ const routing = (
     <div>
       <Switch>
         {/* <Route exact path="/" component={App} /> Home */}
-        <Route exact path="/" component={Login} /> {/* Login */}
+        {/* <Route exact path="/" component={Login} /> Login */}
+        <Route exact path="/" component={TodasasConsultas} /> {/* Login */}
         <Route path="/consultasmedico" component={ConsultaMedico} /> {/* Consultas do Medico */}
         <Route path="/consultaspaciente" component={ConsultaPaciente} /> {/* Cosultas do Paciente */}
         <Route path="/todasasconsultas" component={TodasasConsultas} /> {/* Todas as Consultas */}

@@ -10,11 +10,23 @@ import Header from '../../components/header/header'
 export default function ConsultaPaciente() {
     const [listatodasconsultas, setListastodasconsultas] = useState([]);
 
+    // function BuscarMeusEventos() {
+    //     axios('http://192.168.3.115:5000/api/Consulta/', {
+    //         headers: {
+    //             'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+    //         }
+    //     }).then((resposta) => {
+    //         if (resposta.status === 200) {
+    //             console.log(resposta.data)
+    //             setListastodasconsultas(resposta.data)
+    //         }
+    //     }).catch(erro => console.log(erro))
+    // }
+    // useEffect(BuscarMeusEventos, [])
+    
     function BuscarMeusEventos() {
-        axios('http://192.168.3.115:5000/api/Consulta/', {
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-            }
+        axios('https://6205069a161670001741b35f.mockapi.io/Consulta', {
+
         }).then((resposta) => {
             if (resposta.status === 200) {
                 console.log(resposta.data)
@@ -37,7 +49,7 @@ export default function ConsultaPaciente() {
                     listatodasconsultas.map((minhaConsulta) => {
                         console.log(minhaConsulta)
                         return (
-                            <div className='div-container' key={minhaConsulta.idConsulta}>
+                            <div className='div-container' key={minhaConsulta.id}>
                                 <section className="container-consulta">
                                     <div className="box-total" >
                                         <div className="box-paciente">
@@ -47,24 +59,25 @@ export default function ConsultaPaciente() {
                                                     year: 'numeric', month: 'numeric', day: 'numeric',
                                                     hour: 'numeric', minute: 'numeric',
                                                     hour12: false
-                                                }).format(new Date(minhaConsulta.dataConsulta))}</span>
-                                                <span className="dados-consulta">{minhaConsulta.idProntuarioNavigation.nome}</span>
-                                                <span className="dados-consulta">{minhaConsulta.idMedicoNavigation.nome} / {minhaConsulta.idMedicoNavigation.idEspecialidadeNavigation.nomeEspecialidade}</span>
+                                                }).format(new Date(minhaConsulta.Data_Consulta))}</span>
+                                                <span className="dados-consulta">{minhaConsulta.Id_Prontuario[0].Nome}</span>
+                                                <span className="dados-consulta">{minhaConsulta.Id_Medico[0].Nome} </span>
                                             </div>
                                         </div>
                                         <div className="box-opcoes">
                                             <div className="box-status reduz-espacamento">
-                                                <span className="info_status">{minhaConsulta.idStatusNavigation.descricao}</span>
+                                                {/* <span className="info_status">{minhaConsulta.Id_Status.Descricao}</span>
                                                 {
-                                                    (minhaConsulta.idStatus === 1 ? <hr className="divisoria" /> :
+                                                    (minhaConsulta.Id_Status === 1 ? <hr className="divisoria" /> :
 
-                                                        minhaConsulta.idStatus === 2 ? <hr className="divisoria-vermelha" />
+                                                        minhaConsulta.Id_Status === 2 ? <hr className="divisoria-vermelha" />
 
                                                             : <hr className="divisoria-amarela" />)
-                                                }
+                                                } */}
                                             </div>
                                             <div className="box-alterar-descricao">
-                                                {/* <a href="Descricao.html"><img src="../assets/ferramenta-lapis 4.png" alt="Icone de Edição"></a> <!-- Transformar essa imagem em icone depois --> */}
+                                                {/* <a href="Descricao.html"><img src="../assets/ferramenta-lapis 4.png" alt="Icone de Edição"/></a> */}
+                                                {/* <!--Transformar essa imagem em icone depois--> */}
                                             </div>
                                         </div>
                                     </div>
